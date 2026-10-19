@@ -1,0 +1,222 @@
+/* Premium spiritual styling custom rules */
+
+.crystal-aura {
+  --background: 260 25% 7%;
+  --foreground: 40 25% 92%;
+
+  --card: 260 22% 11%;
+  --card-foreground: 40 25% 92%;
+
+  --popover: 260 22% 11%;
+  --popover-foreground: 40 25% 92%;
+
+  --primary: 41 56% 58%;
+  --primary-foreground: 260 25% 8%;
+
+  --secondary: 260 18% 15%;
+  --secondary-foreground: 40 25% 92%;
+
+  --muted: 260 15% 16%;
+  --muted-foreground: 40 12% 65%;
+
+  --accent: 270 55% 60%;
+  --accent-foreground: 40 25% 96%;
+
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 40 25% 96%;
+
+  --border: 260 18% 20%;
+  --input: 260 18% 20%;
+  --ring: 41 56% 58%;
+
+  --gold: 41 56% 58%;
+  --glass-bg: 260 22% 11% / 0.75;
+  --glass-border: 41 30% 30% / 0.4;
+  --scrollbar-track: 260 25% 7%;
+  --scrollbar-thumb: 41 30% 35%;
+
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+}
+
+.crystal-aura h1, 
+.crystal-aura h2, 
+.crystal-aura h3, 
+.crystal-aura h4, 
+.crystal-aura h5, 
+.crystal-aura h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.crystal-aura.light {
+  --background: 40 30% 96%;
+  --foreground: 30 15% 15%;
+
+  --card: 40 25% 98%;
+  --card-foreground: 30 15% 15%;
+
+  --popover: 40 25% 98%;
+  --popover-foreground: 30 15% 15%;
+
+  --primary: 40 65% 42%;
+  --primary-foreground: 40 30% 98%;
+
+  --secondary: 40 15% 90%;
+  --secondary-foreground: 30 15% 25%;
+
+  --muted: 40 10% 88%;
+  --muted-foreground: 30 10% 45%;
+
+  --accent: 280 40% 50%;
+  --accent-foreground: 40 30% 98%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 40 15% 85%;
+  --input: 40 15% 85%;
+  --ring: 40 65% 42%;
+
+  --gold: 40 65% 42%;
+  --glass-bg: 40 30% 100% / 0.7;
+  --glass-border: 40 25% 84%;
+  --scrollbar-track: 40 25% 94%;
+  --scrollbar-thumb: 40 35% 65%;
+}
+
+
+/* Subtle gold shimmer — reduced intensity for modern look */
+.shimmer-text {
+  background: linear-gradient(
+    to right,
+    hsl(35 80% 65%) 0%,
+    hsl(35 85% 45%) 30%,
+    hsl(35 80% 65%) 70%,
+    hsl(35 85% 45%) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShimmer 6s linear infinite;
+}
+
+.light .shimmer-text {
+  background: linear-gradient(
+    to right,
+    hsl(35 80% 55%) 0%,
+    hsl(35 85% 40%) 30%,
+    hsl(35 80% 55%) 70%,
+    hsl(35 85% 40%) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Subtle ambient orbs */
+.orb-glow-primary {
+  background: radial-gradient(circle, hsl(270 50% 60% / 0.1) 0%, hsl(270 50% 60% / 0) 70%);
+  animation: orbFloat 30s ease-in-out infinite alternate;
+}
+
+.orb-glow-accent {
+  background: radial-gradient(circle, hsl(35 85% 56% / 0.08) 0%, hsl(35 85% 56% / 0) 70%);
+  animation: orbFloatDouble 40s ease-in-out infinite alternate-reverse;
+}
+
+.light .orb-glow-primary {
+  background: radial-gradient(circle, hsl(270 45% 55% / 0.06) 0%, hsl(270 45% 55% / 0) 70%);
+}
+
+.light .orb-glow-accent {
+  background: radial-gradient(circle, hsl(35 80% 50% / 0.05) 0%, hsl(35 80% 50% / 0) 70%);
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(80px, -50px) scale(1.15);
+  }
+  100% {
+    transform: translate(-40px, 60px) scale(0.9);
+  }
+}
+
+@keyframes orbFloatDouble {
+  0% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+  50% {
+    transform: translate(-100px, 80px) scale(0.85);
+  }
+  100% {
+    transform: translate(60px, -70px) scale(1.05);
+  }
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(240 3% 25%);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(35 85% 56%);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: hsl(240 3% 70%);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: hsl(35 80% 50%);
+}
+
+/* Subtle card hover */
+.hover-glow-card {
+  transition: all 0.4s ease;
+}
+.hover-glow-card:hover {
+  box-shadow: 0 8px 24px -8px hsl(35 85% 56% / 0.15);
+  border-color: hsl(35 85% 56% / 0.25) !important;
+}
+
+.light .hover-glow-card:hover {
+  box-shadow: 0 8px 24px -8px hsl(35 80% 50% / 0.15);
+  border-color: hsl(35 80% 50% / 0.2) !important;
+}
+
+/* Clean gold accents */
+.text-gold-gradient {
+  background: linear-gradient(135deg, hsl(35 80% 60%) 0%, hsl(35 85% 45%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, hsl(35 85% 56%) 0%, hsl(35 80% 40%) 100%);
+}
