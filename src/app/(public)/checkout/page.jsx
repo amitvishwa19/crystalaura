@@ -238,37 +238,6 @@ const CheckoutPage = () => {
  }
  };
 
- if (!response.ok) throw new Error(result.error || "Payment failed");
-
- const options = {
- key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "",
- amount: grandTotal * 100,
- currency: "INR",
- name: "Crystal Aura",
- description: `Order ${orderId}`,
- order_id: result.razorpayOrderId,
- prefill: { name: form.name, email: form.email, contact: form.phone },
- handler: () => {
- orderData.paymentId = result.razorpayOrderId;
- addOrder(orderData);
- clearCart();
- setPlacing(false);
- router.push(`/order-success?id=${orderId}`);
- },
- modal: {
- ondismiss: () => { setPlacing(false); },
- },
- };
-
- const rzp = new window.Razorpay(options);
- rzp.open();
- } catch (err) {
- setPlacing(false);
- alert("Payment could not be initiated. Please try again.");
- }
- }
- };
-
  if (items.length === 0) {
  return (
  <div className="min-h-screen flex items-center justify-center pt-24 pb-20 px-6">
