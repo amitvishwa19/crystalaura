@@ -4,6 +4,7 @@ import FooterSection from "./_components/FooterSection";
 import ImagePackSelector from "./_components/ImagePackSelector";
 import CartDrawer from "./_components/CartDrawer";
 import { CrystalAuraProviders } from "./_context/CrystalAuraProviders";
+import { getStoreInfo } from "@/lib/devlomatix-store";
 
 // Import local premium stylesheet overrides
 import "./_styles/crystals.css";
@@ -13,7 +14,11 @@ export const metadata = {
     description: 'Discover our curated collection of authentic healing crystals, gemstones, and spiritual tools. Expertly sourced for your spiritual journey.',
 };
 
-export default function CrystalAuraLayout({ children }) {
+export default async function CrystalAuraLayout({ children }) {
+    const storeInfo = await getStoreInfo();
+    const storeLogo = storeInfo?.store?.logo || null;
+    const storeName = storeInfo?.store?.name || "CrystalAura";
+
     return (
         <CrystalAuraProviders>
             <div className="relative min-h-screen flex flex-col bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
@@ -24,7 +29,7 @@ export default function CrystalAuraLayout({ children }) {
                 </div>
 
                 {/* 🧭 Site Navbar Header */}
-                <SiteNavbar />
+                <SiteNavbar initialLogo={storeLogo} initialStoreName={storeName} />
 
                 {/* 🛒 Cart Drawer */}
                 <CartDrawer />

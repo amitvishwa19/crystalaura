@@ -48,7 +48,36 @@ export const CartProvider = ({ children }) => {
  }, []);
 
  useEffect(() => {
- localStorage.setItem("crystal-aura-cart", JSON.stringify(items));
+  localStorage.setItem("crystal-aura-cart", JSON.stringify(items));
+
+  if (typeof window !== "undefined") {
+   let guestId = localStorage.getItem("crystal-aura-guest-id");
+   if (!guestId) {
+    guestId = "gst_" + Date.now().toString(36) + Math.random().toString(36).substring(2, 6);
+    localStorage.setItem("crystal-aura-guest-id", guestId);
+   }
+
+   if (items.length > 0) {
+    const timer = setTimeout(() => {
+     fetch("/api/store/cart/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+       guestId,
+       items: items.map(i => ({
+        productId: i.product?.id,
+        name: i.product?.name,
+        price: i.product?.priceNum || i.product?.price,
+        quantity: i.quantity,
+       })),
+       totalAmount: items.reduce((sum, i) => sum + (i.product?.priceNum || i.product?.price || 0) * i.quantity, 0),
+      }),
+     }).catch(() => {});
+    }, 2000);
+
+    return () => clearTimeout(timer);
+   }
+  }
  }, [items]);
 
  const addItem = (product) => {

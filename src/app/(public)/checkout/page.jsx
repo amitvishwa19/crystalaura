@@ -77,13 +77,43 @@ const CheckoutPage = () => {
  if (validateShipping()) setStep(1);
  };
 
- const applyPromo = () => {
+ const applyPromo = async () => {
  const code = promoInput.trim().toUpperCase();
  setPromoError("");
  if (!code) { setPromoError("Enter a promo code"); return; }
- const promo = PROMO_CODES[code];
- if (!promo) { setPromoError("Invalid promo code"); setAppliedPromo(null); return; }
- setAppliedPromo({ code, ...promo });
+
+ try {
+  const res = await fetch("/api/store/coupons/validate", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({ code, subtotal: totalPrice }),
+  });
+  const data = await res.json();
+  if (data.success && data.valid) {
+   setAppliedPromo({
+    code: data.coupon.code,
+    type: data.coupon.type === "PERCENTAGE" ? "percent" : "flat",
+    value: data.coupon.value,
+    label: `${data.coupon.value}${data.coupon.type === "PERCENTAGE" ? "% off" : " ₹ off"}`,
+   });
+   return;
+  }
+  const fallbackPromo = PROMO_CODES[code];
+  if (fallbackPromo) {
+   setAppliedPromo({ code, ...fallbackPromo });
+  } else {
+   setPromoError(data.error || "Invalid promo code");
+   setAppliedPromo(null);
+  }
+ } catch {
+  const fallbackPromo = PROMO_CODES[code];
+  if (fallbackPromo) {
+   setAppliedPromo({ code, ...fallbackPromo });
+  } else {
+   setPromoError("Invalid promo code");
+   setAppliedPromo(null);
+  }
+ }
  };
 
  const removePromo = () => { setAppliedPromo(null); setPromoInput(""); setPromoError(""); };
@@ -92,37 +122,121 @@ const CheckoutPage = () => {
  if (items.length === 0) return;
  setPlacing(true);
 
- const orderId = `CA${Date.now()}${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
-
- const orderData = {
- id: orderId,
- date: new Date().toISOString(),
- status: "confirmed",
- items: items.map((i) => ({ product: i.product, quantity: i.quantity })),
- subtotal: totalPrice,
- discount,
- shipping,
- giftWrap: giftFee,
- paymentMethod,
- promoCode: appliedPromo?.code || null,
- total: grandTotal,
- shippingAddress: { ...form },
- giftMessage: giftWrap ? giftMessage : null,
- };
-
- if (paymentMethod === "cod") {
- addOrder(orderData);
- clearCart();
- setPlacing(false);
- router.push(`/order-success?id=${orderId}`);
- } else {
  try {
- const response = await fetch("/api/checkout", {
- method: "POST",
- headers: { "Content-Type": "application/json" },
- body: JSON.stringify({ ...orderData }),
- });
- const result = await response.json();
+  const orderPayload = {
+   customer: {
+    name: form.name,
+    email: form.email,
+    phone: form.phone,
+    address: form.address,
+    city: form.city,
+    state: form.state,
+    pincode: form.pincode,
+   },
+   items: items.map(i => ({
+    productId: i.product.id,
+    variantId: i.variantId || null,
+    quantity: i.quantity,
+   })),
+   promoCode: appliedPromo?.code || null,
+   paymentMethod,
+   giftWrap,
+   giftMessage: giftWrap ? giftMessage : null,
+  };
+
+  const res = await fetch("/api/store/orders", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify(orderPayload),
+  });
+
+  const backendData = await res.json().catch(() => ({}));
+  const orderId = backendData.order?.externalOrderId || backendData.order?.id || `CA${Date.now()}`;
+
+  const orderData = {
+   id: orderId,
+   orderNumber: backendData.order?.orderNumber || orderId,
+   date: new Date().toISOString(),
+   status: "confirmed",
+   items: items.map((i) => ({ product: i.product, quantity: i.quantity })),
+   subtotal: totalPrice,
+   discount,
+   shipping,
+   giftWrap: giftFee,
+   paymentMethod,
+   promoCode: appliedPromo?.code || null,
+   total: backendData.order?.totalAmount || grandTotal,
+   shippingAddress: { ...form },
+   giftMessage: giftWrap ? giftMessage : null,
+  };
+
+  if (paymentMethod === "cod") {
+   addOrder(orderData);
+   clearCart();
+   setPlacing(false);
+   router.push(`/order-success?id=${orderId}`);
+  } else {
+   try {
+    const response = await fetch("/api/checkout", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({ ...orderData }),
+    });
+    const result = await response.json();
+
+    if (!response.ok) throw new Error(result.error || "Payment failed");
+
+    const options = {
+     key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "",
+     amount: grandTotal * 100,
+     currency: "INR",
+     name: "Crystal Aura",
+     description: `Order ${orderId}`,
+     order_id: result.razorpayOrderId,
+     prefill: { name: form.name, email: form.email, contact: form.phone },
+     handler: () => {
+      orderData.paymentId = result.razorpayOrderId;
+      addOrder(orderData);
+      clearCart();
+      setPlacing(false);
+      router.push(`/order-success?id=${orderId}`);
+     },
+     modal: {
+      ondismiss: () => setPlacing(false),
+     },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+   } catch (err) {
+    console.error("Payment init error:", err);
+    addOrder(orderData);
+    clearCart();
+    setPlacing(false);
+    router.push(`/order-success?id=${orderId}`);
+   }
+  }
+ } catch (error) {
+  console.error("[CHECKOUT_SUBMIT_ERROR]", error);
+  const fallbackId = `CA${Date.now()}`;
+  addOrder({
+   id: fallbackId,
+   date: new Date().toISOString(),
+   status: "confirmed",
+   items: items.map((i) => ({ product: i.product, quantity: i.quantity })),
+   subtotal: totalPrice,
+   discount,
+   shipping,
+   giftWrap: giftFee,
+   paymentMethod,
+   total: grandTotal,
+   shippingAddress: { ...form },
+  });
+  clearCart();
+  setPlacing(false);
+  router.push(`/order-success?id=${fallbackId}`);
+ }
+ };
 
  if (!response.ok) throw new Error(result.error || "Payment failed");
 

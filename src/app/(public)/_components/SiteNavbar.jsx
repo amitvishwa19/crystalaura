@@ -14,6 +14,7 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { shopMenuGroups, SHOP_CATEGORIES } from "../_data/shopCategories";
+import { AppLogo } from "@/components/global/AppLogo";
 
 // Inline SVG Icon components to completely bypass Next.js Turbopack lucide-react caching bugs
 const CartIcon = ({ className = "w-4 h-4" }) => (
@@ -104,7 +105,7 @@ const navTriggerClass = (active) =>
         active ? "text-primary font-black" : "text-muted-foreground"
     }`;
 
-const SiteNavbar = () => {
+const SiteNavbar = ({ initialLogo, initialStoreName }) => {
     const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
     const { totalItems, setIsOpen } = useCart();
@@ -139,12 +140,15 @@ const SiteNavbar = () => {
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group relative">
-                    <span className="font-serif text-2xl md:text-3xl font-semibold text-foreground relative">
-                        CRYSTAL<span className="text-primary-foreground text-gold-gradient font-black">AURA</span>
-                        <span className="absolute bottom-[-4px] left-0 w-0 h-[1.5px] bg-gold-gradient transition-all duration-500 group-hover:w-full" />
-                    </span>
-                </Link>
+                <AppLogo
+                    link="/"
+                    className="h-9 md:h-11 w-auto max-w-[210px]"
+                    height={44}
+                    width={185}
+                    priority
+                    initialLogo={initialLogo}
+                    initialStoreName={initialStoreName}
+                />
 
                 {/* Desktop Navigation */}
                 <NavigationMenu className="hidden md:flex flex-none">

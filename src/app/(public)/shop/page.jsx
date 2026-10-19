@@ -37,19 +37,36 @@ function ShopContent() {
  const [maxPrice, setMaxPrice] = useState(6000);
  const [sort, setSort] = useState("featured");
  const [loading, setLoading] = useState(true);
+ const [liveProducts, setLiveProducts] = useState(products);
 
  const { addItem: addToCart } = useCart();
  const { toggleWishlist, isWishlisted } = useWishlist();
  const { getProductImage } = useImagePack();
 
  useEffect(() => {
- const timer = setTimeout(() => setLoading(false), 500);
- return () => clearTimeout(timer);
- }, []);
+  let isMounted = true;
+  async function loadLiveProducts() {
+   try {
+    setLoading(true);
+    const categoryParam = activeSlug !== "all" ? `&category=${encodeURIComponent(activeSlug)}` : "";
+    const res = await fetch(`/api/store/products?limit=50${categoryParam}`);
+    const data = await res.json();
+    if (isMounted && data.success && Array.isArray(data.products) && data.products.length > 0) {
+      setLiveProducts(data.products);
+    }
+   } catch (err) {
+    console.warn("Using fallback products:", err);
+   } finally {
+    if (isMounted) setLoading(false);
+   }
+  }
+  loadLiveProducts();
+  return () => { isMounted = false; };
+ }, [activeSlug]);
 
  const filteredProducts = useMemo(() => {
- let list = products.filter((p) => {
- const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase());
+ let list = liveProducts.filter((p) => {
+ const matchesSearch = p.name?.toLowerCase().includes(search.toLowerCase()) || p.description?.toLowerCase().includes(search.toLowerCase());
  const matchesCategory = productMatchesCategory(p, activeSlug);
  
  // Check if priceNum exists, else use price
