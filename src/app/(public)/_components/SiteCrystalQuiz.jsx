@@ -175,7 +175,7 @@ const SiteCrystalQuiz = () => {
  <div className="w-12 h-12 rounded-full bg-primary/5 border border-primary/20 flex items-center justify-center mx-auto mb-4">
  <SparklesIcon className="w-5 h-5 text-primary animate-pulse" />
  </div>
- <p className="text-primary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-sm font-sans font-black mb-3">
  ✦ Crystal Match ✦
  </p>
  <h2 className="font-serif text-4xl md:text-5xl text-foreground">
@@ -190,7 +190,7 @@ const SiteCrystalQuiz = () => {
  {!completed ? (
  <div>
  {/* Progress & Controls */}
- <div className="mb-6 flex items-center justify-between text-[10px] font-sans font-bold text-muted-foreground/50">
+ <div className="mb-6 flex items-center justify-between text-sm font-sans font-bold text-muted-foreground/50">
  <span>Step {currentStep + 1} of {questions.length}</span>
  <button 
  onClick={handleRestart}
@@ -258,7 +258,7 @@ const SiteCrystalQuiz = () => {
  </AnimatePresence>
 
  {/* Navigation Back & Skip */}
- <div className="flex items-center justify-between mt-8 text-[10px] font-sans font-bold ">
+ <div className="flex items-center justify-between mt-8 text-sm font-sans font-bold ">
  <button
  disabled={currentStep === 0}
  onClick={handleBack}
@@ -285,7 +285,7 @@ const SiteCrystalQuiz = () => {
  <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-6">
  <CheckCircle2Icon className="w-8 h-8 text-primary animate-bounce" />
  </div>
- <p className="text-primary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-sm font-sans font-black mb-3">
  Alignment Complete
  </p>
  <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
@@ -303,7 +303,7 @@ const SiteCrystalQuiz = () => {
  {getRecommendations().crystals.map(c => (
  <span 
  key={c}
- className="px-4 py-2 rounded-full border border-primary/25 bg-primary/5 text-[9px] font-sans font-black text-primary "
+ className="px-4 py-2 rounded-full border border-primary/25 bg-primary/5 text-sm font-sans font-black text-primary "
  >
  ✦ {c}
  </span>
@@ -314,12 +314,12 @@ const SiteCrystalQuiz = () => {
  <div className="flex flex-col sm:flex-row justify-center gap-4">
  <button
  onClick={handleRestart}
- className="border border-white/10 text-foreground text-[10px] font-black font-sans px-8 py-4.5 rounded-full hover:bg-white/5 hover:border-white/20 transition-all active:scale-95"
+ className="border border-white/10 text-foreground text-sm font-black font-sans px-8 py-4.5 rounded-full hover:bg-white/5 hover:border-white/20 transition-all active:scale-95"
  >
  Retake Quiz
  </button>
  <Link href="/shop">
- <button className="bg-gold-gradient text-white text-[10px] font-black font-sans px-8 py-4.5 rounded-full hover:opacity-90 shadow-lg shadow-primary/20 transition-all border border-primary/15 active:scale-95">
+ <button className="bg-gold-gradient text-white text-sm font-black font-sans px-8 py-4.5 rounded-full hover:opacity-90 shadow-lg shadow-primary/20 transition-all border border-primary/15 active:scale-95">
  Shop Your Picks
  </button>
  </Link>

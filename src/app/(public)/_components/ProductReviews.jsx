@@ -199,7 +199,7 @@ const ProductReviews = ({ productId }) => {
  <div className="flex items-center gap-2 flex-wrap">
  <p className="font-medium text-sm">{r.author}</p>
  {r.verified && (
- <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/30">
+ <span className="inline-flex items-center gap-1 text-sm px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/30">
  <ShieldCheck className="w-3 h-3" /> Verified Buyer
  </span>
  )}

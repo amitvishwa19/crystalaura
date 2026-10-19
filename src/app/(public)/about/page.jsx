@@ -34,7 +34,7 @@ export default function AboutPage() {
  
  {/* About Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-primary font-bold block mb-3">
+ <span className="text-sm font-sans text-primary font-bold block mb-3">
  ✦ Our Journey ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -81,7 +81,7 @@ export default function AboutPage() {
  <stat.icon className="w-5 h-5" />
  </div>
  <p className="font-serif text-xl md:text-2xl font-bold text-foreground mb-1">{stat.value}</p>
- <p className="text-[10px] text-muted-foreground font-bold">{stat.label}</p>
+ <p className="text-sm text-muted-foreground font-bold">{stat.label}</p>
  </motion.div>
  ))}
  </div>

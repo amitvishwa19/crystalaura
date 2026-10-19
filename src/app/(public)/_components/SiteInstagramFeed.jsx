@@ -58,7 +58,7 @@ const SiteInstagramFeed = () => {
  href="https://instagram.com" 
  target="_blank" 
  rel="noreferrer" 
- className="inline-flex items-center justify-center whitespace-nowrap text-[10px] font-sans font-black bg-gold-gradient text-white rounded-full h-14 px-10 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-primary/15"
+ className="inline-flex items-center justify-center whitespace-nowrap text-sm font-sans font-black bg-gold-gradient text-white rounded-full h-14 px-10 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-primary/15"
  >
  Instagram
  </a>

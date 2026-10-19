@@ -68,7 +68,7 @@ export default function ContactPage() {
  
  {/* Contact Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-primary font-bold block mb-3">
+ <span className="text-sm font-sans text-primary font-bold block mb-3">
  ✦ Get In Touch ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -103,7 +103,7 @@ export default function ContactPage() {
  <item.icon className="w-5 h-5" />
  </div>
  <div className="min-w-0">
- <p className="text-[9px] text-primary font-bold mb-1">{item.label}</p>
+ <p className="text-sm text-primary font-bold mb-1">{item.label}</p>
  <p className="font-serif text-sm font-bold text-foreground truncate">{item.value}</p>
  </div>
  </Wrapper>
@@ -145,7 +145,7 @@ export default function ContactPage() {
  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
  <div>
- <label className="text-[10px] text-muted-foreground font-bold mb-1.5 block">Name *</label>
+ <label className="text-sm text-muted-foreground font-bold mb-1.5 block">Name *</label>
  <input
  type="text"
  placeholder="Your name"
@@ -155,11 +155,11 @@ export default function ContactPage() {
  errors.name ? "border-red-500/50" : "border-white/10 focus:border-primary/50"
  }`}
  />
- {errors.name && <p className="text-[9px] text-red-400 mt-1 font-bold">{errors.name}</p>}
+ {errors.name && <p className="text-sm text-red-400 mt-1 font-bold">{errors.name}</p>}
  </div>
 
  <div>
- <label className="text-[10px] text-muted-foreground font-bold mb-1.5 block">Email *</label>
+ <label className="text-sm text-muted-foreground font-bold mb-1.5 block">Email *</label>
  <input
  type="email"
  placeholder="Your email"
@@ -169,13 +169,13 @@ export default function ContactPage() {
  errors.email ? "border-red-500/50" : "border-white/10 focus:border-primary/50"
  }`}
  />
- {errors.email && <p className="text-[9px] text-red-400 mt-1 font-bold">{errors.email}</p>}
+ {errors.email && <p className="text-sm text-red-400 mt-1 font-bold">{errors.email}</p>}
  </div>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
  <div>
- <label className="text-[10px] text-muted-foreground font-bold mb-1.5 block">Subject</label>
+ <label className="text-sm text-muted-foreground font-bold mb-1.5 block">Subject</label>
  <input
  type="text"
  placeholder="Subject line"
@@ -186,7 +186,7 @@ export default function ContactPage() {
  </div>
 
  <div>
- <label className="text-[10px] text-muted-foreground font-bold mb-1.5 block">Topic</label>
+ <label className="text-sm text-muted-foreground font-bold mb-1.5 block">Topic</label>
  <select
  value={form.topic}
  onChange={(e) => setForm({ ...form, topic: e.target.value })}
@@ -200,7 +200,7 @@ export default function ContactPage() {
  </div>
 
  <div>
- <label className="text-[10px] text-muted-foreground font-bold mb-1.5 block">Message *</label>
+ <label className="text-sm text-muted-foreground font-bold mb-1.5 block">Message *</label>
  <textarea
  rows={5}
  placeholder="Write your message..."
@@ -210,7 +210,7 @@ export default function ContactPage() {
  errors.message ? "border-red-500/50" : "border-white/10 focus:border-primary/50"
  }`}
  />
- {errors.message && <p className="text-[9px] text-red-400 mt-1 font-bold">{errors.message}</p>}
+ {errors.message && <p className="text-sm text-red-400 mt-1 font-bold">{errors.message}</p>}
  </div>
 
  <button

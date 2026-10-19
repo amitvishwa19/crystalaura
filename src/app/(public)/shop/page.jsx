@@ -79,7 +79,7 @@ export default function ShopPage() {
  
  {/* Editorial Page Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-primary font-bold block mb-3">
+ <span className="text-sm font-sans text-primary font-bold block mb-3">
  ✦ Premium Natural Curations ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -144,7 +144,7 @@ export default function ShopPage() {
  onChange={(e) => setMaxPrice(Number(e.target.value))}
  className="w-full accent-primary bg-white/10 h-1 rounded-lg appearance-none cursor-pointer"
  />
- <div className="flex justify-between text-[9px] text-muted-foreground mt-2 font-mono">
+ <div className="flex justify-between text-sm text-muted-foreground mt-2 font-mono">
  <span>₹200</span>
  <span>₹6,000</span>
  </div>
@@ -170,7 +170,7 @@ export default function ShopPage() {
  {/* Right Column: Products Grid */}
  <div className="lg:col-span-3">
  <div className="flex justify-between items-center mb-6">
- <span className="text-[10px] text-muted-foreground font-mono">
+ <span className="text-sm text-muted-foreground font-mono">
  Showing {filteredProducts.length} curations
  </span>
  </div>
@@ -235,12 +235,12 @@ export default function ShopPage() {
  <div className="p-5 flex-grow flex flex-col justify-between">
  <div>
  <div className="flex items-center justify-between gap-2 mb-2">
- <span className="text-[9px] text-primary font-bold ">
+ <span className="text-sm text-primary font-bold ">
  {p.category}
  </span>
  <div className="flex items-center gap-1">
  <StarIcon className="w-3 h-3 text-primary" />
- <span className="text-[10px] font-mono font-bold text-foreground">{p.rating}</span>
+ <span className="text-sm font-mono font-bold text-foreground">{p.rating}</span>
  </div>
  </div>
  <h3 className="font-serif text-lg font-bold leading-snug mb-2 group-hover:text-primary transition-colors duration-300">
@@ -255,7 +255,7 @@ export default function ShopPage() {
  <div className="flex items-baseline gap-2">
  <span className="font-serif font-bold text-foreground">₹{priceVal.toLocaleString()}</span>
  {hasDiscount && (
- <span className="text-[10px] line-through text-muted-foreground/60">
+ <span className="text-sm line-through text-muted-foreground/60">
  ₹{originalPriceVal.toLocaleString()}
  </span>
  )}
@@ -264,7 +264,7 @@ export default function ShopPage() {
  {/* Add to Cart Button */}
  <button
  onClick={() => addToCart({ ...p, priceNum: priceVal })}
- className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary/25 hover:border-primary/45 transition-all duration-300 active:scale-95 flex items-center gap-1.5 text-[10px] font-bold "
+ className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary/25 hover:border-primary/45 transition-all duration-300 active:scale-95 flex items-center gap-1.5 text-sm font-bold "
  >
  <ShoppingBagIcon className="w-3.5 h-3.5" />
  <span>Add</span>

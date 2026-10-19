@@ -109,7 +109,7 @@ const SiteCrystalBraceletCalculator = () => {
  <div className="w-12 h-12 rounded-full bg-primary/5 border border-primary/20 flex items-center justify-center mx-auto mb-4">
  <SparklesIcon className="w-5 h-5 text-primary animate-pulse" />
  </div>
- <p className="text-primary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-sm font-sans font-black mb-3">
  ✦ Bracelet Finder ✦
  </p>
  <h2 className="font-serif text-4xl md:text-5xl text-foreground">
@@ -123,7 +123,7 @@ const SiteCrystalBraceletCalculator = () => {
  <div className="max-w-3xl mx-auto">
  {!completed ? (
  <div>
- <div className="mb-6 flex items-center justify-between text-[10px] font-sans font-bold text-muted-foreground/50">
+ <div className="mb-6 flex items-center justify-between text-sm font-sans font-bold text-muted-foreground/50">
  <span>Step {step + 1} of 3</span>
  <button
  onClick={handleRestart}
@@ -197,7 +197,7 @@ const SiteCrystalBraceletCalculator = () => {
  <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-6">
  <CheckCircle2Icon className="w-8 h-8 text-primary animate-bounce" />
  </div>
- <p className="text-primary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-sm font-sans font-black mb-3">
  Alignment Complete
  </p>
  <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
@@ -225,11 +225,11 @@ const SiteCrystalBraceletCalculator = () => {
  />
  <div className="flex flex-col justify-between min-w-0">
  <h4 className="font-serif text-sm text-foreground truncate">{p.name}</h4>
- <p className="text-[10px] text-muted-foreground/60 mt-1 line-clamp-2">{p.description}</p>
+ <p className="text-sm text-muted-foreground/60 mt-1 line-clamp-2">{p.description}</p>
  <div className="flex items-center justify-between mt-2">
  <span className="text-primary font-sans font-bold text-sm">₹{priceVal}</span>
  <Link href={`/shop/${p.id}`}>
- <button className="text-[10px] font-sans font-black text-primary hover:underline">
+ <button className="text-sm font-sans font-black text-primary hover:underline">
  View →
  </button>
  </Link>
@@ -243,12 +243,12 @@ const SiteCrystalBraceletCalculator = () => {
  <div className="flex flex-col sm:flex-row justify-center gap-4">
  <button
  onClick={handleRestart}
- className="border border-white/10 text-foreground text-[10px] font-black font-sans px-8 py-4.5 rounded-full hover:bg-white/5 hover:border-white/20 transition-all active:scale-95"
+ className="border border-white/10 text-foreground text-sm font-black font-sans px-8 py-4.5 rounded-full hover:bg-white/5 hover:border-white/20 transition-all active:scale-95"
  >
  Retake Quiz
  </button>
  <Link href="/shop?category=bracelets">
- <button className="bg-gold-gradient text-white text-[10px] font-black font-sans px-8 py-4.5 rounded-full hover:opacity-90 shadow-lg shadow-primary/20 transition-all border border-primary/15 active:scale-95">
+ <button className="bg-gold-gradient text-white text-sm font-black font-sans px-8 py-4.5 rounded-full hover:opacity-90 shadow-lg shadow-primary/20 transition-all border border-primary/15 active:scale-95">
  Browse All Bracelets
  </button>
  </Link>

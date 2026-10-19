@@ -74,7 +74,7 @@ const ProductCard = ({ id, image, title, description, price, delay = 0 }) => {
 
  {/* Quick action buttons */}
  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 flex gap-2">
- <div className="flex-1 glass rounded-xl text-white py-3 text-[10px] font-sans font-black hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2 border border-white/10">
+ <div className="flex-1 glass rounded-xl text-white py-3 text-sm font-sans font-black hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2 border border-white/10">
  <EyeIcon className="w-4 h-4" />
  <span>View</span>
  </div>
@@ -98,7 +98,7 @@ const ProductCard = ({ id, image, title, description, price, delay = 0 }) => {
  <h3 className="font-serif text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
  {title}
  </h3>
- <p className="text-muted-foreground text-[10px] mt-1 font-bold line-clamp-1 ">{description}</p>
+ <p className="text-muted-foreground text-sm mt-1 font-bold line-clamp-1 ">{description}</p>
  </div>
  </motion.div>
  );

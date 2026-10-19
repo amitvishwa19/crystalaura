@@ -414,7 +414,7 @@ const AccountPage = () => {
                                                     <div className="flex items-center gap-2">
                                                         <p className="text-xs text-foreground font-sans font-bold">{addr.name}</p>
                                                         {addr.isDefault && (
-                                                            <span className="text-[8px] font-sans font-black px-1.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">Default</span>
+                                                            <span className="text-sm font-sans font-black px-1.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">Default</span>
                                                         )}
                                                     </div>
                                                     <p className="text-sm text-muted-foreground/70 mt-0.5">{addr.address}</p>

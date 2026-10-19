@@ -187,7 +187,7 @@ const Results = ({ answers, onReset }) => {
  </button>
  </div>
  <div className="p-5 flex-1 flex flex-col">
- <span className="text-[10px] text-gold ">{p.category}</span>
+ <span className="text-sm text-gold ">{p.category}</span>
  <Link href={`/product/${p.id}`} className="font-serif font-semibold mt-1 hover:text-gold transition-colors">{p.name}</Link>
  <div className="flex items-center gap-1 mt-1">
  <Star className="w-3 h-3 text-gold fill-current" />

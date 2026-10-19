@@ -51,14 +51,14 @@ export default function BlogPostPage({ params: paramsPromise }) {
  {/* Back Link */}
  <Link
  href="/blog"
- className="inline-flex items-center gap-2 text-[10px] font-bold text-muted-foreground hover:text-primary transition-colors duration-300 mb-8"
+ className="inline-flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors duration-300 mb-8"
  >
  <ArrowLeftIcon className="w-3.5 h-3.5" /> Back to Journal
  </Link>
 
  {/* Hero Meta Info */}
  <div className="mb-10">
- <span className="text-[9px] text-primary font-bold block mb-3">
+ <span className="text-sm text-primary font-bold block mb-3">
  {post.category}
  </span>
  <h1 className="text-3xl md:text-5xl font-serif font-bold text-foreground leading-tight mb-6">

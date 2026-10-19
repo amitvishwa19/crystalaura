@@ -30,7 +30,7 @@ const OrderSuccessPage = () => {
  <div className="text-center max-w-md">
  <h1 className="font-serif text-2xl text-foreground mb-2">No order found</h1>
  <p className="text-sm text-muted-foreground/70 font-light mb-6">This page needs a valid order ID.</p>
- <Link href="/shop" className="inline-block text-[10px] font-sans font-black text-primary bg-primary/10 border border-primary/20 px-8 py-3.5 rounded-xl hover:bg-primary/20 active:scale-95 transition-all">
+ <Link href="/shop" className="inline-block text-sm font-sans font-black text-primary bg-primary/10 border border-primary/20 px-8 py-3.5 rounded-xl hover:bg-primary/20 active:scale-95 transition-all">
  Continue Shopping
  </Link>
  </div>
@@ -63,7 +63,7 @@ const OrderSuccessPage = () => {
  animate={{ opacity: 1, y: 0 }}
  transition={{ delay: 0.3 }}
  >
- <p className="text-[10px] font-sans font-black text-primary mb-3">
+ <p className="text-sm font-sans font-black text-primary mb-3">
  Order Confirmed
  </p>
  <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-3">
@@ -82,12 +82,12 @@ const OrderSuccessPage = () => {
  >
  <div className="flex items-center justify-between mb-4 pb-4 border-b border-white/5">
  <div>
- <p className="text-[9px] font-sans font-black text-muted-foreground">Order ID</p>
+ <p className="text-sm font-sans font-black text-muted-foreground">Order ID</p>
  <p className="text-sm font-sans font-bold text-foreground mt-0.5">{orderId}</p>
  </div>
  <div className="text-right">
- <p className="text-[9px] font-sans font-black text-muted-foreground">Status</p>
- <span className="inline-block mt-0.5 text-[10px] font-sans font-black px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+ <p className="text-sm font-sans font-black text-muted-foreground">Status</p>
+ <span className="inline-block mt-0.5 text-sm font-sans font-black px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
  Confirmed
  </span>
  </div>
@@ -99,7 +99,7 @@ const OrderSuccessPage = () => {
  <img src={item.product.image} alt={item.product.name} className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
  <div className="flex-1 min-w-0">
  <p className="text-xs text-foreground font-sans font-bold truncate">{item.product.name}</p>
- <p className="text-[10px] text-muted-foreground/60">Qty: {item.quantity}</p>
+ <p className="text-sm text-muted-foreground/60">Qty: {item.quantity}</p>
  </div>
  <p className="text-xs text-primary font-sans font-bold">₹{item.product.priceNum || item.product.price}</p>
  </div>
@@ -136,14 +136,14 @@ const OrderSuccessPage = () => {
  </div>
 
  <div className="mt-4 pt-4 border-t border-white/5">
- <p className="text-[9px] font-sans font-black text-muted-foreground mb-2">Shipping To</p>
+ <p className="text-sm font-sans font-black text-muted-foreground mb-2">Shipping To</p>
  <p className="text-xs text-foreground font-sans font-bold">{order?.shippingAddress?.name}</p>
- <p className="text-[10px] text-muted-foreground/70">{order?.shippingAddress?.address}</p>
- <p className="text-[10px] text-muted-foreground/70">{order?.shippingAddress?.city}, {order?.shippingAddress?.state} — {order?.shippingAddress?.pincode}</p>
+ <p className="text-sm text-muted-foreground/70">{order?.shippingAddress?.address}</p>
+ <p className="text-sm text-muted-foreground/70">{order?.shippingAddress?.city}, {order?.shippingAddress?.state} — {order?.shippingAddress?.pincode}</p>
  </div>
 
  <div className="mt-4 pt-4 border-t border-white/5">
- <p className="text-[9px] font-sans font-black text-muted-foreground mb-2">Payment</p>
+ <p className="text-sm font-sans font-black text-muted-foreground mb-2">Payment</p>
  <p className="text-xs text-foreground font-sans font-bold">
  {order?.paymentMethod === "cod" ? "Cash on Delivery" : "Online Payment"}
  </p>
@@ -156,10 +156,10 @@ const OrderSuccessPage = () => {
  transition={{ delay: 0.5 }}
  className="flex flex-col sm:flex-row justify-center gap-4"
  >
- <Link href="/orders" className="text-[10px] font-sans font-black px-8 py-3.5 rounded-xl border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 active:scale-95 transition-all">
+ <Link href="/orders" className="text-sm font-sans font-black px-8 py-3.5 rounded-xl border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 active:scale-95 transition-all">
  View All Orders
  </Link>
- <Link href="/shop" className="text-[10px] font-sans font-black px-8 py-3.5 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <Link href="/shop" className="text-sm font-sans font-black px-8 py-3.5 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20">
  Continue Shopping
  </Link>
  </motion.div>

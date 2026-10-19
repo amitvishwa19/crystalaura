@@ -71,7 +71,7 @@ const SiteCrystalOfTheDay = () => {
  {/* Glassmorphic crystal of the day floating badge */}
  <div className="absolute top-8 left-8 inline-flex items-center gap-2.5 bg-background/80 backdrop-blur-md border border-primary/20 px-5 py-2.5 rounded-full shadow-lg shadow-black/20">
  <SparklesIcon className="w-4 h-4 text-primary animate-pulse" />
- <span className="text-[9px] text-primary font-sans font-black ">
+ <span className="text-sm text-primary font-sans font-black ">
  Crystal of the Day
  </span>
  </div>
@@ -79,7 +79,7 @@ const SiteCrystalOfTheDay = () => {
 
  {/* Right Column: Content */}
  <div className="p-8 md:p-16 flex flex-col justify-center bg-[#0e0e12]/20 backdrop-blur-md border-l border-white/5 md:border-l">
- <p className="text-primary text-[10px] font-sans font-black mb-4">
+ <p className="text-primary text-sm font-sans font-black mb-4">
  {dateStr || "✦ Today's Pick"}
  </p>
  <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4 leading-tight">
@@ -103,7 +103,7 @@ const SiteCrystalOfTheDay = () => {
  </div>
  </div>
  {product.originalPrice && (
- <div className="bg-primary/5 border border-primary/20 rounded-full px-3.5 py-1 text-[9px] font-sans font-black text-primary animate-pulse">
+ <div className="bg-primary/5 border border-primary/20 rounded-full px-3.5 py-1 text-sm font-sans font-black text-primary animate-pulse">
  Save {Math.round((1 - priceVal / product.originalPrice) * 100)}%
  </div>
  )}

@@ -31,7 +31,7 @@ const FooterSection = () => {
 
  {/* Quick Links */}
  <div className="space-y-4 font-sans">
- <h4 className="text-primary text-[10px] font-black ">Quick Links</h4>
+ <h4 className="text-primary text-sm font-black ">Quick Links</h4>
  <ul className="space-y-3 text-xs text-muted-foreground font-bold">
  <li><Link className="hover:text-primary transition-colors" href="/shop">Shop Collection</Link></li>
  <li><Link className="hover:text-primary transition-colors" href="/crystals">Crystal Guide</Link></li>
@@ -44,7 +44,7 @@ const FooterSection = () => {
 
  {/* Customer Support */}
  <div className="space-y-4 font-sans">
- <h4 className="text-primary text-[10px] font-black ">Support Portal</h4>
+ <h4 className="text-primary text-sm font-black ">Support Portal</h4>
  <ul className="space-y-3 text-xs text-muted-foreground font-bold">
  <li><Link className="hover:text-primary transition-colors" href="/faq">Help &amp; FAQ</Link></li>
  <li><Link href="#" className="hover:text-primary transition-colors">Shipping Information</Link></li>
@@ -56,7 +56,7 @@ const FooterSection = () => {
 
  {/* Stay Connected (Newsletter) */}
  <div className="space-y-4 font-sans">
- <h4 className="text-primary text-[10px] font-black ">Stay Connected</h4>
+ <h4 className="text-primary text-sm font-black ">Stay Connected</h4>
  <p className="text-xs text-muted-foreground/80 leading-relaxed font-light">
  Subscribe for crystal guide updates, cosmic insights, and exclusive spiritual collection offers.
  </p>
@@ -81,7 +81,7 @@ const FooterSection = () => {
  </div>
 
  {/* Copyright */}
- <div className="border-t border-white/5 mt-8 pt-8 text-center text-[10px] font-sans text-muted-foreground/40 font-bold">
+ <div className="border-t border-white/5 mt-8 pt-8 text-center text-sm font-sans text-muted-foreground/40 font-bold">
  <p>© 2026 Crystal Aura. All rights reserved. Crafted with ✧ and sacred intention.</p>
  </div>
  </div>

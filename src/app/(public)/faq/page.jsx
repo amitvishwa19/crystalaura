@@ -18,7 +18,7 @@ export default function FAQPage() {
  
  {/* FAQ Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-primary font-bold block mb-3">
+ <span className="text-sm font-sans text-primary font-bold block mb-3">
  ✦ Common Questions ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">

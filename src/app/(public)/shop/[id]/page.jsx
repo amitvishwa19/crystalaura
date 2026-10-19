@@ -134,7 +134,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <div className="max-w-7xl mx-auto px-6">
  
  {/* Breadcrumbs */}
- <nav className="flex items-center gap-2 text-[10px] font-bold text-muted-foreground mb-12">
+ <nav className="flex items-center gap-2 text-sm font-bold text-muted-foreground mb-12">
  <Link href="/" className="hover:text-primary transition-colors">Home</Link>
  <span className="opacity-30">/</span>
  <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
@@ -158,7 +158,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  alt={product.name}
  className="w-full h-full object-cover"
  />
- <span className="absolute top-6 left-6 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full text-[9px] font-black shadow-lg">
+ <span className="absolute top-6 left-6 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-black shadow-lg">
  {product.category}
  </span>
  </div>
@@ -182,7 +182,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <StarIcon key={star} className="w-3.5 h-3.5" />
  ))}
  </div>
- <span className="text-[10px] font-bold text-muted-foreground">
+ <span className="text-sm font-bold text-muted-foreground">
  {avgRating} ({fakeReviews.length} reviews)
  </span>
  </div>
@@ -204,7 +204,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
 
  {/* Quantity Selector */}
  <div className="flex items-center gap-6 mb-8">
- <span className="text-[10px] font-bold text-muted-foreground">Quantity</span>
+ <span className="text-sm font-bold text-muted-foreground">Quantity</span>
  <div className="flex items-center bg-white/5 border border-white/10 rounded-xl p-1">
  <button
  onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -266,13 +266,13 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 text-primary">
  <f.icon className="w-5 h-5" />
  </div>
- <span className="text-[9px] text-muted-foreground font-bold leading-tight">{f.label}</span>
+ <span className="text-sm text-muted-foreground font-bold leading-tight">{f.label}</span>
  </div>
  ))}
  </div>
 
  {/* Status */}
- <div className="flex items-center gap-2 text-[9px] font-bold text-muted-foreground bg-white/5 border border-white/10 px-4 py-2.5 rounded-full w-fit">
+ <div className="flex items-center gap-2 text-sm font-bold text-muted-foreground bg-white/5 border border-white/10 px-4 py-2.5 rounded-full w-fit">
  <CheckIcon className="w-3.5 h-3.5 text-green-400" />
  <span>In Stock — Ships within 24 hours</span>
  </div>
@@ -290,7 +290,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <button
  key={t.id}
  onClick={() => setActiveTab(t.id)}
- className={`pb-4 px-6 text-[10px] font-bold transition-all border-b-2 -mb-[2px] ${
+ className={`pb-4 px-6 text-sm font-bold transition-all border-b-2 -mb-[2px] ${
  activeTab === t.id ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
  }`}
  >
@@ -327,7 +327,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <div key={idx} className="glass-card rounded-2xl p-5 border border-white/5 flex flex-col gap-2">
  <div className="flex items-center justify-between">
  <span className="font-serif text-sm font-bold text-foreground">{r.name}</span>
- <span className="text-[10px] text-muted-foreground">{r.date}</span>
+ <span className="text-sm text-muted-foreground">{r.date}</span>
  </div>
  <div className="flex items-center gap-1 text-primary">
  {[...Array(r.rating)].map((_, starIdx) => (

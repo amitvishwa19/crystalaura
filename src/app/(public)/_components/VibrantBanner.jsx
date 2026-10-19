@@ -57,7 +57,7 @@ const VibrantBanner = () => {
  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')]" />
 
  <div className="relative z-10 space-y-4 max-w-xl text-center md:text-left">
- <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full text-primary text-[9px] font-sans font-black ">
+ <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full text-primary text-sm font-sans font-black ">
  <SparklesIcon className="w-3.5 h-3.5" />
  Special Vedic Blessing
  </div>
@@ -85,7 +85,7 @@ const VibrantBanner = () => {
  {/* 2. Collections Showcase */}
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-16">
- <p className="text-primary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-sm font-sans font-black mb-3">
  ✦ Sacred Treasures ✦
  </p>
  <h3 className="font-serif text-3xl md:text-5xl text-foreground">
@@ -114,7 +114,7 @@ const VibrantBanner = () => {
  
  {/* Floating details inside image */}
  <div className="absolute bottom-6 left-6 right-6">
- <p className="text-[9px] text-primary font-sans font-black mb-1">{col.subtitle}</p>
+ <p className="text-sm text-primary font-sans font-black mb-1">{col.subtitle}</p>
  <h4 className="font-serif text-2xl text-foreground font-medium">{col.title}</h4>
  </div>
  </div>
@@ -124,7 +124,7 @@ const VibrantBanner = () => {
  <p className="text-muted-foreground/80 text-xs leading-relaxed font-light mb-6">
  {col.desc}
  </p>
- <Link href={col.link} className="inline-flex items-center gap-1.5 text-[10px] text-primary font-sans font-black group-hover:text-foreground transition-colors duration-300">
+ <Link href={col.link} className="inline-flex items-center gap-1.5 text-sm text-primary font-sans font-black group-hover:text-foreground transition-colors duration-300">
  Shop Collection
  <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
  </Link>

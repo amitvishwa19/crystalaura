@@ -78,7 +78,7 @@ const CartDrawer = () => {
  <div className="flex items-center justify-between p-6 border-b border-white/5">
  <div>
  <h2 className="font-serif text-xl text-foreground">Cart</h2>
- <p className="text-[10px] text-muted-foreground font-sans font-bold ">
+ <p className="text-sm text-muted-foreground font-sans font-bold ">
  {totalItems} {totalItems === 1 ? "item" : "items"}
  </p>
  </div>
@@ -97,11 +97,11 @@ const CartDrawer = () => {
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-muted-foreground"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
  </div>
  <p className="text-muted-foreground text-sm font-light mb-1">Your cart is empty</p>
- <p className="text-[10px] text-muted-foreground/60 font-sans font-bold mb-6">Discover our sacred collection</p>
+ <p className="text-sm text-muted-foreground/60 font-sans font-bold mb-6">Discover our sacred collection</p>
  <Link
  href="/shop"
  onClick={() => setIsOpen(false)}
- className="inline-block text-[10px] font-sans font-black text-primary hover:underline"
+ className="inline-block text-sm font-sans font-black text-primary hover:underline"
  >
  Browse Shop
  </Link>
@@ -161,9 +161,9 @@ const CartDrawer = () => {
  <div className="flex items-center gap-2 text-sm">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-green-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
  <span className="text-xs font-sans font-bold text-foreground">{appliedPromo.code}</span>
- <span className="text-[10px] text-muted-foreground">({appliedPromo.label})</span>
+ <span className="text-sm text-muted-foreground">({appliedPromo.label})</span>
  </div>
- <button type="button" onClick={removePromo} className="text-[10px] text-muted-foreground hover:text-destructive font-sans font-bold">Remove</button>
+ <button type="button" onClick={removePromo} className="text-sm text-muted-foreground hover:text-destructive font-sans font-bold">Remove</button>
  </div>
  ) : (
  <div>
@@ -179,12 +179,12 @@ const CartDrawer = () => {
  <button
  type="button"
  onClick={applyPromo}
- className="px-5 py-2.5 rounded-xl text-[10px] font-sans font-black bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all"
+ className="px-5 py-2.5 rounded-xl text-sm font-sans font-black bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all"
  >
  Apply
  </button>
  </div>
- {promoError && <p className="text-[10px] text-destructive mt-1.5 font-sans font-bold">{promoError}</p>}
+ {promoError && <p className="text-sm text-destructive mt-1.5 font-sans font-bold">{promoError}</p>}
  </div>
  )}
 
@@ -206,7 +206,7 @@ const CartDrawer = () => {
  </span>
  </div>
  {totalPrice < 999 && totalPrice > 0 && (
- <p className="text-[9px] text-muted-foreground/60 font-sans font-bold ">
+ <p className="text-sm text-muted-foreground/60 font-sans font-bold ">
  Add ₹{999 - totalPrice} more for free shipping
  </p>
  )}
@@ -220,7 +220,7 @@ const CartDrawer = () => {
  <Link
  href="/checkout"
  onClick={() => setIsOpen(false)}
- className="block w-full text-center py-3.5 rounded-xl text-[10px] font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20"
+ className="block w-full text-center py-3.5 rounded-xl text-sm font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20"
  >
  Checkout
  </Link>

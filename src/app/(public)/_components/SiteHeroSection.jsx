@@ -22,7 +22,7 @@ const SiteHeroSection = () => {
  initial={{ opacity: 0, y: 15 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
- className="mb-6 inline-flex items-center gap-2 text-[10px] font-sans text-primary font-black bg-primary/5 px-4.5 py-2.5 rounded-full border border-primary/25 shadow-lg shadow-primary/5"
+ className="mb-6 inline-flex items-center gap-2 text-sm font-sans text-primary font-black bg-primary/5 px-4.5 py-2.5 rounded-full border border-primary/25 shadow-lg shadow-primary/5"
  >
  <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
  BASED IN INDIA — SHIPPING WORLDWIDE
@@ -75,15 +75,15 @@ const SiteHeroSection = () => {
  >
  <div>
  <p className="text-foreground text-sm font-black ">9k+</p>
- <p className="text-muted-foreground text-[10px] mt-1">Spirits Aligned</p>
+ <p className="text-muted-foreground text-sm mt-1">Spirits Aligned</p>
  </div>
  <div>
  <p className="text-foreground text-sm font-black ">100%</p>
- <p className="text-muted-foreground text-[10px] mt-1">Ethical Source</p>
+ <p className="text-muted-foreground text-sm mt-1">Ethical Source</p>
  </div>
  <div>
  <p className="text-foreground text-sm font-black ">A+</p>
- <p className="text-muted-foreground text-[10px] mt-1">Vedic Rating</p>
+ <p className="text-muted-foreground text-sm mt-1">Vedic Rating</p>
  </div>
  </motion.div>
  </div>
@@ -112,7 +112,7 @@ const SiteHeroSection = () => {
  <motion.div
  animate={{ rotate: 360 }}
  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
- className="w-32 h-32 rounded-full border border-primary/20 bg-background/90 backdrop-blur-md flex items-center justify-center text-[9px] font-black p-5 text-center leading-tight text-primary shadow-2xl hover:border-primary/40 transition-colors"
+ className="w-32 h-32 rounded-full border border-primary/20 bg-background/90 backdrop-blur-md flex items-center justify-center text-sm font-black p-5 text-center leading-tight text-primary shadow-2xl hover:border-primary/40 transition-colors"
  style={{ boxShadow: '0 10px 30px -10px rgba(139,92,246,0.2)' }}
  >
  100% Authentic • Ethically Sourced •

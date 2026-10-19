@@ -44,7 +44,7 @@ export default function VastuPage() {
  
  {/* Vastu Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-primary font-bold block mb-3">
+ <span className="text-sm font-sans text-primary font-bold block mb-3">
  ✦ Sacred Placement ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -75,7 +75,7 @@ export default function VastuPage() {
  <p className="text-xs text-muted-foreground leading-relaxed mb-6">{tip.description}</p>
  </div>
  <div className="pt-4 border-t border-white/5">
- <span className="text-[9px] text-primary font-bold block mb-1">Recommended Crystals</span>
+ <span className="text-sm text-primary font-bold block mb-1">Recommended Crystals</span>
  <p className="text-xs text-foreground font-medium font-serif">{tip.crystals}</p>
  </div>
  </motion.div>

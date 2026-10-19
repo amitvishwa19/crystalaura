@@ -45,7 +45,7 @@ export default function ImagePackSelector() {
  style={{ boxShadow: "0 10px 30px -5px rgba(139,92,246,0.2)" }}
  >
  <div className="px-2 py-1 border-b border-white/5 mb-1">
- <p className="text-[9px] font-black text-primary-foreground text-gold-gradient">
+ <p className="text-sm font-black text-primary-foreground text-gold-gradient">
  Select Image Pack
  </p>
  </div>
@@ -56,7 +56,7 @@ export default function ImagePackSelector() {
  changeImagePack(pack.id);
  setIsOpen(false);
  }}
- className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-[10px] font-bold transition-all duration-300 ${
+ className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 ${
  imagePack === pack.id
  ? "bg-primary/20 text-primary border border-primary/20"
  : "text-muted-foreground hover:text-white hover:bg-white/5 border border-transparent"

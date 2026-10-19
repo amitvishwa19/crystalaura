@@ -164,7 +164,7 @@ const CheckoutPage = () => {
  </div>
  <h1 className="font-serif text-2xl text-foreground mb-2">Your cart is empty</h1>
  <p className="text-sm text-muted-foreground/70 font-light mb-6">Discover our sacred collection of healing crystals</p>
- <Link href="/shop" className="inline-block text-[10px] font-sans font-black text-primary bg-primary/10 border border-primary/20 px-8 py-3.5 rounded-xl hover:bg-primary/20 active:scale-95 transition-all">
+ <Link href="/shop" className="inline-block text-sm font-sans font-black text-primary bg-primary/10 border border-primary/20 px-8 py-3.5 rounded-xl hover:bg-primary/20 active:scale-95 transition-all">
  Browse Shop
  </Link>
  </div>
@@ -178,7 +178,7 @@ const CheckoutPage = () => {
  return (
  <div className="min-h-screen pt-28 pb-20 px-6">
  <div className="max-w-7xl mx-auto">
- <Link href="/cart" className="inline-flex items-center gap-2 text-[10px] font-sans font-bold text-muted-foreground hover:text-foreground transition-all mb-6 group">
+ <Link href="/cart" className="inline-flex items-center gap-2 text-sm font-sans font-bold text-muted-foreground hover:text-foreground transition-all mb-6 group">
  <ArrowLeftIcon className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
  Back to Cart
  </Link>
@@ -187,7 +187,7 @@ const CheckoutPage = () => {
  {steps.map((s, i) => (
  <React.Fragment key={s.id}>
  <div className={`flex items-center gap-1.5 ${i <= step ? "text-primary" : "text-muted-foreground/40"}`}>
- <div className={`w-7 h-7 rounded-full flex items-center justify-center text-[9px] font-sans font-black ${
+ <div className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-sans font-black ${
  i < step
  ? "bg-primary/20 border border-primary/40"
  : i === step
@@ -196,7 +196,7 @@ const CheckoutPage = () => {
  }`}>
  {i < step ? <CheckIcon className="w-3.5 h-3.5" /> : i + 1}
  </div>
- <span className={`text-[9px] font-sans font-black hidden sm:inline ${i === step ? "text-foreground" : ""}`}>
+ <span className={`text-sm font-sans font-black hidden sm:inline ${i === step ? "text-foreground" : ""}`}>
  {s.label}
  </span>
  </div>
@@ -221,44 +221,44 @@ const CheckoutPage = () => {
 
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
  <div>
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">Full Name</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">Full Name</label>
  <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={formErrors.name ? inputErrorClass : inputClass} placeholder="Your full name" />
- {formErrors.name && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.name}</p>}
+ {formErrors.name && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.name}</p>}
  </div>
  <div>
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">Email</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">Email</label>
  <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={formErrors.email ? inputErrorClass : inputClass} placeholder="your@email.com" />
- {formErrors.email && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.email}</p>}
+ {formErrors.email && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.email}</p>}
  </div>
  </div>
 
  <div className="mt-5">
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">Phone</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">Phone</label>
  <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={formErrors.phone ? inputErrorClass : inputClass} placeholder="10-digit mobile number" maxLength={10} />
- {formErrors.phone && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.phone}</p>}
+ {formErrors.phone && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.phone}</p>}
  </div>
 
  <div className="mt-5">
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">Address</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">Address</label>
  <textarea rows={3} value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} className={(formErrors.address ? inputErrorClass : inputClass) +"resize-none"} placeholder="Street, area, landmark" />
- {formErrors.address && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.address}</p>}
+ {formErrors.address && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.address}</p>}
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
  <div>
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">City</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">City</label>
  <input type="text" value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} className={formErrors.city ? inputErrorClass : inputClass} placeholder="City" />
- {formErrors.city && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.city}</p>}
+ {formErrors.city && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.city}</p>}
  </div>
  <div>
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">State</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">State</label>
  <input type="text" value={form.state} onChange={(e) => setForm({ ...form, state: e.target.value })} className={formErrors.state ? inputErrorClass : inputClass} placeholder="State" />
- {formErrors.state && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.state}</p>}
+ {formErrors.state && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.state}</p>}
  </div>
  <div>
- <label className="text-[9px] font-sans font-black text-muted-foreground mb-1.5 block">Pincode</label>
+ <label className="text-sm font-sans font-black text-muted-foreground mb-1.5 block">Pincode</label>
  <input type="text" value={form.pincode} onChange={(e) => setForm({ ...form, pincode: e.target.value })} className={formErrors.pincode ? inputErrorClass : inputClass} placeholder="6-digit pincode" maxLength={6} />
- {formErrors.pincode && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{formErrors.pincode}</p>}
+ {formErrors.pincode && <p className="text-sm text-destructive mt-1 font-sans font-bold">{formErrors.pincode}</p>}
  </div>
  </div>
 
@@ -269,22 +269,22 @@ const CheckoutPage = () => {
  <div className="flex items-center gap-2">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-primary"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
  <span className="text-sm font-sans font-bold text-foreground">Add gift wrapping</span>
- <span className="text-[10px] text-muted-foreground font-sans">+₹{GIFT_WRAP_FEE}</span>
+ <span className="text-sm text-muted-foreground font-sans">+₹{GIFT_WRAP_FEE}</span>
  </div>
- <p className="text-[10px] text-muted-foreground/60 mt-1 font-light">Hand-wrapped in silk pouch with a personalized note card.</p>
+ <p className="text-sm text-muted-foreground/60 mt-1 font-light">Hand-wrapped in silk pouch with a personalized note card.</p>
  </div>
  </label>
  <AnimatePresence>
  {giftWrap && (
  <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="mt-3 overflow-hidden">
  <textarea rows={3} maxLength={200} value={giftMessage} onChange={(e) => setGiftMessage(e.target.value)} placeholder="Wishing you healing energy and abundance ✦" className={inputClass +"resize-none"} />
- <p className="text-[9px] text-muted-foreground/60 mt-1 text-right font-sans">{giftMessage.length}/200</p>
+ <p className="text-sm text-muted-foreground/60 mt-1 text-right font-sans">{giftMessage.length}/200</p>
  </motion.div>
  )}
  </AnimatePresence>
  </div>
 
- <button type="submit" className="w-full mt-8 py-3.5 rounded-xl text-[10px] font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <button type="submit" className="w-full mt-8 py-3.5 rounded-xl text-sm font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20">
  Continue to Payment
  </button>
  </motion.form>
@@ -317,7 +317,7 @@ const CheckoutPage = () => {
  </div>
  <div>
  <p className="text-sm font-sans font-bold text-foreground">Cash on Delivery</p>
- <p className="text-[10px] text-muted-foreground/60 mt-0.5">Pay when your order arrives</p>
+ <p className="text-sm text-muted-foreground/60 mt-0.5">Pay when your order arrives</p>
  </div>
  </div>
  </button>
@@ -345,7 +345,7 @@ const CheckoutPage = () => {
  </div>
  <div>
  <p className="text-sm font-sans font-bold text-foreground">Pay Online (Razorpay)</p>
- <p className="text-[10px] text-muted-foreground/60 mt-0.5">Credit / Debit card, UPI, Net Banking, Wallet</p>
+ <p className="text-sm text-muted-foreground/60 mt-0.5">Credit / Debit card, UPI, Net Banking, Wallet</p>
  </div>
  </div>
  </button>
@@ -355,14 +355,14 @@ const CheckoutPage = () => {
  <button
  type="button"
  onClick={() => setStep(0)}
- className="flex-1 py-3.5 rounded-xl text-[10px] font-sans font-black border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 active:scale-[0.98] transition-all"
+ className="flex-1 py-3.5 rounded-xl text-sm font-sans font-black border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 active:scale-[0.98] transition-all"
  >
  Back
  </button>
  <button
  type="button"
  onClick={() => setStep(2)}
- className="flex-1 py-3.5 rounded-xl text-[10px] font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20"
+ className="flex-1 py-3.5 rounded-xl text-sm font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20"
  >
  Review Order
  </button>
@@ -381,7 +381,7 @@ const CheckoutPage = () => {
 
  <div className="space-y-4">
  <div className="border border-white/5 rounded-2xl p-5 bg-white/[0.02]">
- <h3 className="text-[9px] font-sans font-black text-muted-foreground mb-3">Shipping To</h3>
+ <h3 className="text-sm font-sans font-black text-muted-foreground mb-3">Shipping To</h3>
  <p className="text-sm text-foreground font-sans font-bold">{form.name}</p>
  <p className="text-xs text-muted-foreground/70 mt-0.5">{form.address}</p>
  <p className="text-xs text-muted-foreground/70">{form.city}, {form.state} — {form.pincode}</p>
@@ -390,14 +390,14 @@ const CheckoutPage = () => {
  </div>
 
  <div className="border border-white/5 rounded-2xl p-5 bg-white/[0.02]">
- <h3 className="text-[9px] font-sans font-black text-muted-foreground mb-3">Items ({items.length})</h3>
+ <h3 className="text-sm font-sans font-black text-muted-foreground mb-3">Items ({items.length})</h3>
  <div className="space-y-3">
  {items.map((item) => (
  <div key={item.product.id} className="flex items-center gap-3">
  <img src={item.product.image} alt={item.product.name} className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
  <div className="flex-1 min-w-0">
  <p className="text-xs text-foreground font-sans font-bold truncate">{item.product.name}</p>
- <p className="text-[10px] text-muted-foreground/60">Qty: {item.quantity}</p>
+ <p className="text-sm text-muted-foreground/60">Qty: {item.quantity}</p>
  </div>
  <p className="text-xs text-primary font-sans font-bold">₹{item.product.priceNum || item.product.price}</p>
  </div>
@@ -406,7 +406,7 @@ const CheckoutPage = () => {
  </div>
 
  <div className="border border-white/5 rounded-2xl p-5 bg-white/[0.02]">
- <h3 className="text-[9px] font-sans font-black text-muted-foreground mb-3">Payment</h3>
+ <h3 className="text-sm font-sans font-black text-muted-foreground mb-3">Payment</h3>
  <p className="text-xs text-foreground font-sans font-bold">
  {paymentMethod === "cod" ? "Cash on Delivery" : "Online Payment (Razorpay)"}
  </p>
@@ -414,7 +414,7 @@ const CheckoutPage = () => {
 
  {giftWrap && giftMessage && (
  <div className="border border-white/5 rounded-2xl p-5 bg-white/[0.02]">
- <h3 className="text-[9px] font-sans font-black text-muted-foreground mb-2">Gift Message</h3>
+ <h3 className="text-sm font-sans font-black text-muted-foreground mb-2">Gift Message</h3>
  <p className="text-xs text-muted-foreground/80 italic">&ldquo;{giftMessage}&rdquo;</p>
  </div>
  )}
@@ -425,7 +425,7 @@ const CheckoutPage = () => {
  type="button"
  onClick={() => setStep(1)}
  disabled={placing}
- className="flex-1 py-3.5 rounded-xl text-[10px] font-sans font-black border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 active:scale-[0.98] transition-all disabled:opacity-50"
+ className="flex-1 py-3.5 rounded-xl text-sm font-sans font-black border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 active:scale-[0.98] transition-all disabled:opacity-50"
  >
  Back
  </button>
@@ -433,7 +433,7 @@ const CheckoutPage = () => {
  type="button"
  onClick={handlePlaceOrder}
  disabled={placing}
- className="flex-1 py-3.5 rounded-xl text-[10px] font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20 disabled:opacity-50"
+ className="flex-1 py-3.5 rounded-xl text-sm font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20 disabled:opacity-50"
  >
  {placing ? "Placing Order..." : `Place Order — ₹${grandTotal}`}
  </button>
@@ -452,15 +452,15 @@ const CheckoutPage = () => {
  <div key={item.product.id} className="flex gap-3 p-2.5 rounded-xl bg-white/[0.02] border border-white/5">
  <img src={item.product.image} alt={item.product.name} className="w-14 h-14 rounded-lg object-cover flex-shrink-0" />
  <div className="flex-1 min-w-0">
- <p className="text-[10px] font-sans font-bold text-foreground truncate">{item.product.name}</p>
- <p className="text-[10px] text-primary font-sans font-bold mt-0.5">₹{item.product.priceNum || item.product.price}</p>
+ <p className="text-sm font-sans font-bold text-foreground truncate">{item.product.name}</p>
+ <p className="text-sm text-primary font-sans font-bold mt-0.5">₹{item.product.priceNum || item.product.price}</p>
  {step === 0 && (
  <div className="flex items-center gap-1 mt-1">
- <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-5 h-5 flex items-center justify-center rounded bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground text-[9px]">
+ <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-5 h-5 flex items-center justify-center rounded bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground text-sm">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><path d="M5 12h14"/></svg>
  </button>
- <span className="text-[9px] w-4 text-center font-sans font-bold">{item.quantity}</span>
- <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="w-5 h-5 flex items-center justify-center rounded bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground text-[9px]">
+ <span className="text-sm w-4 text-center font-sans font-bold">{item.quantity}</span>
+ <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="w-5 h-5 flex items-center justify-center rounded bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground text-sm">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
  </button>
  <button onClick={() => removeItem(item.product.id)} className="ml-1 text-muted-foreground hover:text-destructive">
@@ -479,18 +479,18 @@ const CheckoutPage = () => {
  <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
  <div className="flex items-center gap-2">
  <CheckIcon className="w-3.5 h-3.5 text-green-400" />
- <span className="text-[10px] font-sans font-bold text-foreground">{appliedPromo.code}</span>
- <span className="text-[9px] text-muted-foreground">({appliedPromo.label})</span>
+ <span className="text-sm font-sans font-bold text-foreground">{appliedPromo.code}</span>
+ <span className="text-sm text-muted-foreground">({appliedPromo.label})</span>
  </div>
- <button type="button" onClick={removePromo} className="text-[9px] text-muted-foreground hover:text-destructive font-sans font-bold">Remove</button>
+ <button type="button" onClick={removePromo} className="text-sm text-muted-foreground hover:text-destructive font-sans font-bold">Remove</button>
  </div>
  ) : step < 2 && (
  <div>
  <div className="flex gap-2">
- <input type="text" value={promoInput} onChange={(e) => { setPromoInput(e.target.value); setPromoError(""); }} placeholder="Promo code" maxLength={20} className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-[10px] text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/40 font-sans font-bold"/>
- <button type="button" onClick={applyPromo} className="px-4 py-2.5 rounded-xl text-[9px] font-sans font-black bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all">Apply</button>
+ <input type="text" value={promoInput} onChange={(e) => { setPromoInput(e.target.value); setPromoError(""); }} placeholder="Promo code" maxLength={20} className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/40 font-sans font-bold"/>
+ <button type="button" onClick={applyPromo} className="px-4 py-2.5 rounded-xl text-sm font-sans font-black bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all">Apply</button>
  </div>
- {promoError && <p className="text-[9px] text-destructive mt-1 font-sans font-bold">{promoError}</p>}
+ {promoError && <p className="text-sm text-destructive mt-1 font-sans font-bold">{promoError}</p>}
  </div>
  )}
  </div>
@@ -519,7 +519,7 @@ const CheckoutPage = () => {
  </span>
  </div>
  {totalPrice < FREE_SHIPPING_THRESHOLD && totalPrice > 0 && (
- <p className="text-[9px] text-muted-foreground/60 text-center font-sans font-bold ">
+ <p className="text-sm text-muted-foreground/60 text-center font-sans font-bold ">
  Add ₹{FREE_SHIPPING_THRESHOLD - totalPrice} more for free shipping
  </p>
  )}
@@ -534,7 +534,7 @@ const CheckoutPage = () => {
 
  {step === 0 && (
  <div className="border-t border-white/5 pt-4 mt-4">
- <div className="flex items-center gap-2 text-[9px] text-muted-foreground/60 font-sans font-bold ">
+ <div className="flex items-center gap-2 text-sm text-muted-foreground/60 font-sans font-bold ">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-green-400"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
  Secure checkout
  </div>

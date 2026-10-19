@@ -35,7 +35,7 @@ const OrdersPage = () => {
  </div>
  <h1 className="font-serif text-2xl text-foreground mb-2">No orders yet</h1>
  <p className="text-sm text-muted-foreground/70 font-light mb-6">Your order history will appear here</p>
- <Link href="/shop" className="inline-block text-[10px] font-sans font-black text-primary bg-primary/10 border border-primary/20 px-8 py-3.5 rounded-xl hover:bg-primary/20 active:scale-95 transition-all">
+ <Link href="/shop" className="inline-block text-sm font-sans font-black text-primary bg-primary/10 border border-primary/20 px-8 py-3.5 rounded-xl hover:bg-primary/20 active:scale-95 transition-all">
  Start Shopping
  </Link>
  </div>
@@ -47,7 +47,7 @@ const OrdersPage = () => {
  <div className="min-h-screen pt-28 pb-20 px-6">
  <div className="max-w-3xl mx-auto">
  <div className="text-center mb-12">
- <p className="text-[10px] font-sans font-black text-primary mb-3">Your Orders</p>
+ <p className="text-sm font-sans font-black text-primary mb-3">Your Orders</p>
  <h1 className="font-serif text-3xl md:text-4xl text-foreground">
  Order <span className="text-gold-gradient italic">History</span>
  </h1>
@@ -76,12 +76,12 @@ const OrdersPage = () => {
  >
  <div className="flex-1 min-w-0">
  <div className="flex items-center gap-2 mb-1">
- <span className={`text-[9px] font-sans font-black px-2 py-0.5 rounded-full ${status.bg} ${status.color} ${status.border} border`}>
+ <span className={`text-sm font-sans font-black px-2 py-0.5 rounded-full ${status.bg} ${status.color} ${status.border} border`}>
  {status.label}
  </span>
- <span className="text-[9px] text-muted-foreground/60 font-sans font-bold">{orderDate}</span>
+ <span className="text-sm text-muted-foreground/60 font-sans font-bold">{orderDate}</span>
  </div>
- <p className="text-[10px] font-sans font-bold text-muted-foreground mt-1">
+ <p className="text-sm font-sans font-bold text-muted-foreground mt-1">
  {order.id}
  </p>
  <div className="flex items-center gap-2 mt-1">
@@ -110,8 +110,8 @@ const OrdersPage = () => {
  <div className="flex-1 min-w-0">
  <p className="text-xs text-foreground font-sans font-bold truncate">{item.product.name}</p>
  <div className="flex items-center gap-2 mt-0.5">
- <span className="text-[10px] text-muted-foreground/60 font-sans">Qty: {item.quantity}</span>
- <span className="text-[10px] text-primary font-sans font-bold">₹{item.product.priceNum || item.product.price}</span>
+ <span className="text-sm text-muted-foreground/60 font-sans">Qty: {item.quantity}</span>
+ <span className="text-sm text-primary font-sans font-bold">₹{item.product.priceNum || item.product.price}</span>
  </div>
  </div>
  </div>
@@ -120,18 +120,18 @@ const OrdersPage = () => {
 
  <div className="grid grid-cols-2 gap-3 text-xs text-muted-foreground">
  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
- <p className="text-[9px] font-sans font-black mb-1">Shipping To</p>
+ <p className="text-sm font-sans font-black mb-1">Shipping To</p>
  <p className="text-foreground font-sans font-bold text-[11px]">{order.shippingAddress?.name}</p>
- <p className="text-[10px] mt-0.5">{order.shippingAddress?.address}</p>
- <p className="text-[10px]">{order.shippingAddress?.city}, {order.shippingAddress?.state} — {order.shippingAddress?.pincode}</p>
+ <p className="text-sm mt-0.5">{order.shippingAddress?.address}</p>
+ <p className="text-sm">{order.shippingAddress?.city}, {order.shippingAddress?.state} — {order.shippingAddress?.pincode}</p>
  </div>
  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
- <p className="text-[9px] font-sans font-black mb-1">Payment</p>
+ <p className="text-sm font-sans font-black mb-1">Payment</p>
  <p className="text-foreground font-sans font-bold text-[11px]">
  {order.paymentMethod === "cod" ? "Cash on Delivery" : "Online Payment"}
  </p>
  {order.promoCode && (
- <p className="text-[10px] mt-1">Promo: <span className="text-primary font-sans font-bold">{order.promoCode}</span></p>
+ <p className="text-sm mt-1">Promo: <span className="text-primary font-sans font-bold">{order.promoCode}</span></p>
  )}
  </div>
  </div>

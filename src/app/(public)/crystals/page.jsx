@@ -32,7 +32,7 @@ export default function CrystalsPage() {
 
  {/* Encyclopedia Header */}
  <div className="text-center mb-12">
- <span className="text-[10px] font-sans text-primary font-bold block mb-3">
+ <span className="text-sm font-sans text-primary font-bold block mb-3">
  ✦ Crystal Encyclopedia ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -61,7 +61,7 @@ export default function CrystalsPage() {
  <button
  key={chakra}
  onClick={() => setActiveChakra(chakra)}
- className={`text-[9px] font-bold px-4 py-2 rounded-full border transition-all ${
+ className={`text-sm font-bold px-4 py-2 rounded-full border transition-all ${
  activeChakra === chakra
  ? "bg-primary/20 text-primary border-primary/40 shadow-glow-sm"
  : "bg-white/5 text-muted-foreground border-white/10 hover:border-primary/30 hover:text-primary"
@@ -90,7 +90,7 @@ export default function CrystalsPage() {
  <SunIcon className="w-6 h-6" />
  </div>
  <div>
- <span className="text-[9px] text-primary font-bold block">Energy Collection</span>
+ <span className="text-sm text-primary font-bold block">Energy Collection</span>
  <h3 className="font-serif text-lg font-bold text-foreground">Solar Radiance</h3>
  </div>
  </div>
@@ -120,11 +120,11 @@ export default function CrystalsPage() {
  <div className="p-5">
  <div className="flex items-start justify-between gap-2 mb-2">
  <h4 className="font-serif text-base font-bold text-foreground">{c.name}</h4>
- <span className="text-[8px] text-primary border border-primary/30 rounded-full px-2.5 py-0.5 bg-primary/5 font-black whitespace-nowrap">
+ <span className="text-sm text-primary border border-primary/30 rounded-full px-2.5 py-0.5 bg-primary/5 font-black whitespace-nowrap">
  {c.benefit}
  </span>
  </div>
- <p className="text-[10px] text-primary font-bold mb-2">{c.chakra} Chakra</p>
+ <p className="text-sm text-primary font-bold mb-2">{c.chakra} Chakra</p>
  <p className="text-xs text-muted-foreground leading-relaxed">{c.description}</p>
  </div>
  </motion.div>
@@ -163,7 +163,7 @@ export default function CrystalsPage() {
  </div>
  <div className="p-5">
  <h3 className="font-serif text-base font-bold text-foreground mb-1">{crystal.name}</h3>
- <p className="text-[10px] text-primary font-bold mb-2">{crystal.chakra} Chakra</p>
+ <p className="text-sm text-primary font-bold mb-2">{crystal.chakra} Chakra</p>
  <p className="text-xs text-muted-foreground leading-relaxed">{crystal.description}</p>
  </div>
  </motion.div>

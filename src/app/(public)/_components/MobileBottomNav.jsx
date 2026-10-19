@@ -26,12 +26,12 @@ const MobileBottomNav = () => {
  <span className="relative">
  <Icon className="w-5 h-5" />
  {count > 0 && (
- <span className="absolute -top-1.5 -right-2 bg-gold text-primary-foreground text-[9px] min-w-[14px] h-[14px] px-1 rounded-full flex items-center justify-center font-medium">
+ <span className="absolute -top-1.5 -right-2 bg-gold text-primary-foreground text-sm min-w-[14px] h-[14px] px-1 rounded-full flex items-center justify-center font-medium">
  {count}
  </span>
  )}
  </span>
- <span className="text-[10px] ">{it.label}</span>
+ <span className="text-sm ">{it.label}</span>
  </span>
  );
  if (it.badge === "cart") {
