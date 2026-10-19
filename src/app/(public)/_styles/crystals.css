@@ -37,7 +37,7 @@
 
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-nunito, 'Nunito'), sans-serif;
 }
 
 .crystal-aura h1, 
@@ -46,7 +46,7 @@
 .crystal-aura h4, 
 .crystal-aura h5, 
 .crystal-aura h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-nunito, 'Nunito'), sans-serif;
 }
 
 .crystal-aura.light {

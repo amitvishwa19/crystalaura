@@ -18,7 +18,7 @@ const chakraData = [
         color: "#9b59ff",
         element: "Cosmic Energy",
         cx: 100,
-        cy: 60,
+        cy: 51,
         r: 13,
         description: "Highest spiritual center — pure consciousness, divine connection, and universal oneness.",
         affirmation: "I am connected to the infinite source of light.",

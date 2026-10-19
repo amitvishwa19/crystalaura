@@ -1,5 +1,5 @@
 import "@/css/globals.css";
-import { Inter, Unbounded, Geist, Geist_Mono, Outfit } from "next/font/google";
+import { Nunito, Unbounded, Geist, Geist_Mono } from "next/font/google";
 import SessionWrapper from "@/providers/SessionWrapper";
 import { AppProvider } from "@/providers/AppProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
@@ -19,8 +19,11 @@ import AnalyticsProvider from "@/providers/AnalyticsProvider";
 
 
 const unbounded = Unbounded({ subsets: ["latin"] });
-const outfit = Outfit({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
+
+const nunito = Nunito({
+    subsets: ["latin"],
+    variable: "--font-nunito",
+});
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -52,7 +55,7 @@ export default async function RootLayout({ children }) {
 
     return (
         <html lang="en" className="light">
-            <body className={`${outfit.className}`} suppressHydrationWarning={true}>
+            <body className={`${nunito.variable} ${nunito.className}`} suppressHydrationWarning={true}>
                 <SessionWrapper>
                     <QueryProvider>
                         <AppProvider>

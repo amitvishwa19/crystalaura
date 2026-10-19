@@ -5,10 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart, useWishlist, useTheme } from "../_context/CrystalAuraProviders";
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { shopMenuGroups, SHOP_CATEGORIES } from "../_data/shopCategories";
 
 // Inline SVG Icon components to completely bypass Next.js Turbopack lucide-react caching bugs
-const ShoppingBagIcon = ({ className = "w-4 h-4" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
+const CartIcon = ({ className = "w-4 h-4" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /></svg>
 );
 
 const MenuIcon = ({ className = "w-4 h-4" }) => (
@@ -31,10 +40,6 @@ const MoonIcon = ({ className = "w-4 h-4" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
 );
 
-const ChevronDownIcon = ({ className = "w-4 h-4" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m6 9 6 6 6-6" /></svg>
-);
-
 const GlobeIcon = ({ className = "w-4 h-4" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
 );
@@ -43,9 +48,14 @@ const UserIcon = ({ className = "w-4 h-4" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
 );
 
+const shopLinks = SHOP_CATEGORIES.map((category) => ({
+    label: category.label,
+    path: `/shop?category=${category.slug}`,
+}));
+
 const navItems = [
     { label: "Home", path: "/" },
-    { label: "Shop", path: "/shop" },
+    { label: "Shop", submenu: shopLinks },
     {
         label: "Discover",
         submenu: [
@@ -69,6 +79,31 @@ const navItems = [
     },
 ];
 
+const simpleNavItems = [
+    { label: "Discover", links: [
+        { label: "Crystal Guide", path: "/crystals", description: "Meanings & healing properties" },
+        { label: "Vastu Stones", path: "/vastu", description: "Harmonize your space" },
+    ]},
+    { label: "Resources", links: [
+        { label: "Blog", path: "/blog", description: "Guides, rituals & insights" },
+        { label: "FAQ", path: "/faq", description: "Answers to common questions" },
+    ]},
+    { label: "About Us", links: [
+        { label: "Our Story", path: "/about", description: "Our mission & values" },
+        { label: "Contact", path: "/contact", description: "Get in touch with us" },
+    ]},
+];
+
+const navLinkClass = (active) =>
+    `flex items-center h-10 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
+        active ? "text-primary bg-primary/10 font-black" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+    }`;
+
+const navTriggerClass = (active) =>
+    `h-10 px-4 py-2.5 rounded-lg bg-transparent text-sm font-semibold transition-all duration-300 hover:bg-muted/50 hover:text-foreground focus:bg-muted/50 focus:text-foreground data-[state=open]:bg-muted/50 data-[state=open]:text-primary ${
+        active ? "text-primary font-black" : "text-muted-foreground"
+    }`;
+
 const SiteNavbar = () => {
     const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -77,7 +112,6 @@ const SiteNavbar = () => {
     const { theme, toggleTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState(null);
 
     useEffect(() => {
         setMounted(true);
@@ -91,7 +125,6 @@ const SiteNavbar = () => {
 
     useEffect(() => {
         setMobileOpen(false);
-        setActiveDropdown(null);
     }, [pathname]);
 
     return (
@@ -114,72 +147,111 @@ const SiteNavbar = () => {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden md:flex items-center gap-1.5 font-semibold">
-                    {navItems.map((item, idx) => {
-                        if (item.submenu) {
-                            const isOpen = activeDropdown === idx;
-                            return (
-                                <li
-                                    key={item.label}
-                                    className="relative"
-                                    onMouseEnter={() => setActiveDropdown(idx)}
-                                    onMouseLeave={() => setActiveDropdown(null)}
-                                >
-                                    <button
-                                        className={`flex items-center gap-1 px-4 py-2.5 rounded-lg transition-all duration-300 hover:bg-muted/50 ${item.submenu.some(sub => sub.path === pathname)
-                                                ? "text-primary font-black"
-                                                : "text-muted-foreground hover:text-foreground"
-                                            }`}
-                                    >
-                                        {item.label}
-                                        <ChevronDownIcon className={`w-3.5 h-3.5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-                                    </button>
-
-                                    <AnimatePresence>
-                                        {isOpen && (
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: 10 }}
-                                                transition={{ duration: 0.2 }}
-                                                className="absolute top-full left-0 mt-1.5 w-52 rounded-xl border border-border/50 bg-popover/95 backdrop-blur-xl shadow-2xl p-2.5 flex flex-col gap-1"
-                                                style={{ boxShadow: '0 10px 40px -10px rgba(139,92,246,0.15)' }}
-                                            >
-                                                {item.submenu.map((subItem) => (
-                                                    <Link
-                                                        key={subItem.path}
-                                                        href={subItem.path}
-                                                        className={`px-4 py-3 rounded-lg text-sm transition-colors duration-200 ${pathname === subItem.path
-                                                                ? "text-primary bg-primary/10 font-black"
-                                                                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                                                            }`}
-                                                    >
-                                                        {subItem.label}
-                                                    </Link>
-                                                ))}
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-
-                                </li>
-                            );
-                        }
-
-                        return (
-                            <li key={item.path}>
-                                <Link
-                                    href={item.path}
-                                    className={`px-4 py-2.5 rounded-lg transition-all duration-300 block ${pathname === item.path
-                                            ? "text-primary bg-primary/10 font-black"
-                                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                                        }`}
-                                >
-                                    {item.label}
+                <NavigationMenu className="hidden md:flex flex-none">
+                    <NavigationMenuList className="gap-1.5">
+                        <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link href="/" className={navLinkClass(pathname === "/")}>
+                                    Home
                                 </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+
+                        {/* Shop Mega Menu */}
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger className={navTriggerClass(pathname === "/shop")}>
+                                Shop
+                            </NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                                <div className="w-[calc(100vw-3rem)] max-w-[760px] p-6">
+                                    <div className="grid grid-cols-4 gap-6">
+                                        <div className="col-span-3">
+                                            <p className="mb-3 px-3 text-sm font-black uppercase tracking-[0.2em] text-primary">
+                                                Shop by Type
+                                            </p>
+                                            <ul className="grid grid-cols-3 gap-1">
+                                                {shopMenuGroups[0].items.map((item) => (
+                                                    <li key={item.slug}>
+                                                        <NavigationMenuLink asChild>
+                                                            <Link
+                                                                href={`/shop?category=${item.slug}`}
+                                                                className="block rounded-lg px-3 py-2 transition-colors duration-200 hover:bg-muted/50"
+                                                            >
+                                                                <span className="block text-sm font-semibold text-foreground">
+                                                                    {item.label}
+                                                                </span>
+                                                                <span className="block text-sm leading-snug text-muted-foreground">
+                                                                    {item.description}
+                                                                </span>
+                                                            </Link>
+                                                        </NavigationMenuLink>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="col-span-1 border-l border-border/50 pl-6">
+                                            <p className="mb-3 px-3 text-sm font-black uppercase tracking-[0.2em] text-primary">
+                                                Collections
+                                            </p>
+                                            <ul className="flex flex-col gap-1">
+                                                {shopMenuGroups[1].items.map((item) => (
+                                                    <li key={item.slug}>
+                                                        <NavigationMenuLink asChild>
+                                                            <Link
+                                                                href={`/shop?category=${item.slug}`}
+                                                                className="block rounded-lg px-3 py-2 transition-colors duration-200 hover:bg-muted/50"
+                                                            >
+                                                                <span className="block text-sm font-semibold text-foreground">
+                                                                    {item.label}
+                                                                </span>
+                                                                <span className="block text-sm leading-snug text-muted-foreground">
+                                                                    {item.description}
+                                                                </span>
+                                                            </Link>
+                                                        </NavigationMenuLink>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </NavigationMenuContent>
+                        </NavigationMenuItem>
+
+                        {/* Discover / Resources / About */}
+                        {simpleNavItems.map((section) => {
+                            const isActive = section.links.some((link) => link.path === pathname);
+                            return (
+                                <NavigationMenuItem key={section.label}>
+                                    <NavigationMenuTrigger className={navTriggerClass(isActive)}>
+                                        {section.label}
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="flex w-64 flex-col gap-1 p-2.5">
+                                            {section.links.map((link) => (
+                                                <li key={link.path}>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link
+                                                            href={link.path}
+                                                            className="block rounded-lg px-3 py-2 transition-colors duration-200 hover:bg-muted/50"
+                                                        >
+                                                            <span className="block text-sm font-semibold text-foreground">
+                                                                {link.label}
+                                                            </span>
+                                                            <span className="block text-sm leading-snug text-muted-foreground">
+                                                                {link.description}
+                                                            </span>
+                                                        </Link>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            );
+                        })}
+                    </NavigationMenuList>
+                </NavigationMenu>
 
                 {/* Right Side Icons */}
                 <div className="flex items-center gap-2">
@@ -220,7 +292,7 @@ const SiteNavbar = () => {
                         className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-primary border border-border/50 hover:border-primary/20 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/5 active:scale-95"
                         aria-label="Open cart"
                     >
-                        <ShoppingBagIcon className="w-4.5 h-4.5 transition-transform duration-300 group-hover:scale-110" />
+                        <CartIcon className="w-4.5 h-4.5 transition-transform duration-300 group-hover:scale-110" />
                         {totalItems > 0 && (
                             <motion.span
                                 initial={{ scale: 0 }}

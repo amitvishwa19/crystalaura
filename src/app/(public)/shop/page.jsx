@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart, useWishlist, useImagePack } from "../_context/CrystalAuraProviders";
 import { products } from "../_data/products";
+import { SHOP_CATEGORIES, productMatchesCategory } from "../_data/shopCategories";
 
 // Inline SVG Icons for Lucide bypass
 const SearchIcon = ({ className = "w-4 h-4" }) => (
@@ -27,11 +29,11 @@ const StarIcon = ({ className = "w-4 h-4" }) => (
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 );
 
-const categories = ["All Products", "Crystals", "Jewelry", "Meditation", "Vastu"];
-
-export default function ShopPage() {
+function ShopContent() {
+ const searchParams = useSearchParams();
+ const router = useRouter();
+ const activeSlug = searchParams.get("category") || "all";
  const [search, setSearch] = useState("");
- const [activeTab, setActiveTab] = useState("All Products");
  const [maxPrice, setMaxPrice] = useState(6000);
  const [sort, setSort] = useState("featured");
  const [loading, setLoading] = useState(true);
@@ -48,7 +50,7 @@ export default function ShopPage() {
  const filteredProducts = useMemo(() => {
  let list = products.filter((p) => {
  const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase());
- const matchesCategory = activeTab === "All Products" || p.category.toLowerCase() === activeTab.toLowerCase();
+ const matchesCategory = productMatchesCategory(p, activeSlug);
  
  // Check if priceNum exists, else use price
  const priceVal = p.priceNum || p.price;
@@ -71,7 +73,7 @@ export default function ShopPage() {
  break;
  }
  return list;
- }, [search, activeTab, maxPrice, sort]);
+ }, [search, activeSlug, maxPrice, sort]);
 
  return (
  <div className="min-h-screen bg-background pt-32 pb-24 text-foreground font-sans">
@@ -113,18 +115,19 @@ export default function ShopPage() {
  <div className="glass-card rounded-2xl p-6 border border-white/5">
  <h3 className="text-xs font-bold text-primary mb-4">Categories</h3>
  <div className="flex flex-col gap-2">
- {categories.map((cat) => (
- <button
- key={cat}
- onClick={() => setActiveTab(cat)}
+ {SHOP_CATEGORIES.map((cat) => (
+ <Link
+ key={cat.slug}
+ href={cat.slug === "all" ? "/shop" : `/shop?category=${cat.slug}`}
+ scroll={false}
  className={`text-left text-xs py-2 px-3 rounded-lg transition-all duration-300 ${
- activeTab === cat
+ activeSlug === cat.slug
  ? "bg-primary/10 text-primary font-bold border-l-2 border-primary"
  : "text-muted-foreground hover:text-foreground hover:bg-white/5"
  }`}
  >
- {cat}
- </button>
+ {cat.label}
+ </Link>
  ))}
  </div>
  </div>
@@ -185,7 +188,7 @@ export default function ShopPage() {
  <div className="glass-card rounded-2xl p-16 text-center border border-white/5">
  <p className="text-muted-foreground text-sm">No crystals matched your filter criteria.</p>
  <button
- onClick={() => { setSearch(""); setActiveTab("All Products"); setMaxPrice(6000); setSort("featured"); }}
+ onClick={() => { setSearch(""); setMaxPrice(6000); setSort("featured"); router.replace("/shop"); }}
  className="mt-4 px-6 py-2.5 rounded-xl border border-primary/20 bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-all active:scale-95"
  >
  Reset Filters
@@ -283,5 +286,13 @@ export default function ShopPage() {
 
  </div>
  </div>
+ );
+}
+
+export default function ShopPage() {
+ return (
+ <Suspense fallback={<div className="min-h-screen bg-background pt-32 pb-24" />}>
+ <ShopContent />
+ </Suspense>
  );
 }
