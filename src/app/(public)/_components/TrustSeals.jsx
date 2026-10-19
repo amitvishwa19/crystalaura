@@ -15,7 +15,7 @@ const TrustSeals = () => (
  {seals.map((s) => (
  <div key={s.title} className="flex flex-col items-center text-center gap-1.5">
  <s.icon className="w-6 h-6 text-gold" />
- <p className="text-[11px]s font-medium leading-tight">{s.title}</p>
+ <p className="text-xs font-medium leading-tight">{s.title}</p>
  <p className="text-[10px] text-muted-foreground leading-tight">{s.desc}</p>
  </div>
  ))}

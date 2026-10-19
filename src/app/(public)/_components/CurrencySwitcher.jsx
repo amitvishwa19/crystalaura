@@ -18,7 +18,7 @@ const CurrencySwitcher = () => {
  <div ref={ref} className="relative">
  <button
  onClick={() => setOpen(!open)}
- className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 text-[11px]s px-2 py-1 rounded-md border border-border hover:border-gold/40"
+ className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-border hover:border-gold/40"
  aria-label="Change currency"
  >
  <Globe className="w-3.5 h-3.5" />

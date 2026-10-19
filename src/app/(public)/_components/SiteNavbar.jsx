@@ -108,7 +108,7 @@ const SiteNavbar = () => {
  {/* Logo */}
  <Link href="/" className="flex items-center gap-2 group relative">
  <span className="font-serif text-2xl md:text-3xl font-semibold text-foreground relative">
- CRYSTAL<span className="text-[11px]rimary-foreground text-gold-gradient font-black">AURA</span>
+ CRYSTAL<span className="text-primary-foreground text-gold-gradient font-black">AURA</span>
  <span className="absolute bottom-[-4px] left-0 w-0 h-[1.5px] bg-gold-gradient transition-all duration-500 group-hover:w-full" />
  </span>
  </Link>
@@ -128,7 +128,7 @@ const SiteNavbar = () => {
  <button
  className={`flex items-center gap-1 px-4 py-2.5 rounded-lg transition-all duration-300 hover:bg-muted/50 ${
  item.submenu.some(sub => sub.path === pathname)
- ? "text-[11px]rimary font-black"
+ ? "text-primary font-black"
  : "text-muted-foreground hover:text-foreground"
  }`}
  >
@@ -144,7 +144,7 @@ const SiteNavbar = () => {
  exit={{ opacity: 0, y: 10 }}
  transition={{ duration: 0.2 }}
  className="absolute top-full left-0 mt-1.5 w-52 rounded-xl border border-border/50 bg-popover/95 backdrop-blur-xl shadow-2xl p-2.5 flex flex-col gap-1"
- style={{ boxShadow: '0 10px 40px -10px rgba(220,160,40,0.15)' }}
+ style={{ boxShadow: '0 10px 40px -10px rgba(139,92,246,0.15)' }}
  >
  {item.submenu.map((subItem) => (
  <Link
@@ -152,7 +152,7 @@ const SiteNavbar = () => {
  href={subItem.path}
  className={`px-4 py-3 rounded-lg text-[10px] transition-colors duration-200 ${
  pathname === subItem.path
- ? "text-[11px]rimary bg-primary/10 font-black"
+ ? "text-primary bg-primary/10 font-black"
  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
  }`}
  >
@@ -173,7 +173,7 @@ const SiteNavbar = () => {
  href={item.path}
  className={`px-4 py-2.5 rounded-lg transition-all duration-300 block ${
  pathname === item.path
- ? "text-[11px]rimary bg-primary/10 font-black"
+ ? "text-primary bg-primary/10 font-black"
  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
  }`}
  >
@@ -188,14 +188,14 @@ const SiteNavbar = () => {
  <div className="flex items-center gap-2">
  {/* Currency Indicator */}
  <button className="text-muted-foreground hover:text-foreground transition-all flex items-center gap-1.5 text-[10px] font-sans font-black px-3 py-2 rounded-xl border border-border/50 bg-background/50 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 active:scale-95">
- <GlobeIcon className="w-3.5 h-3.5 text-[11px]rimary" />
+ <GlobeIcon className="w-3.5 h-3.5 text-primary" />
  <span>INR</span>
  </button>
 
  {/* Theme Toggle */}
  <button
  onClick={toggleTheme}
- className="p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-[11px]rimary border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 active:scale-95"
+ className="p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-primary border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 active:scale-95"
  aria-label="Toggle theme"
  >
   {!mounted ? (
@@ -206,7 +206,7 @@ const SiteNavbar = () => {
  {/* Wishlist */}
  <Link
  href="/wishlist"
- className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-[11px]rimary border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 active:scale-95"
+ className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-primary border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 active:scale-95"
  aria-label="Wishlist"
  >
  <HeartIcon className="w-4.5 h-4.5" />
@@ -220,7 +220,7 @@ const SiteNavbar = () => {
  {/* Cart */}
  <button
  onClick={() => setIsOpen(true)}
- className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-[11px]rimary border border-border/50 hover:border-primary/20 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/5 active:scale-95"
+ className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-primary border border-border/50 hover:border-primary/20 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/5 active:scale-95"
  aria-label="Open cart"
  >
  <ShoppingBagIcon className="w-4.5 h-4.5 transition-transform duration-300 group-hover:scale-110" />
@@ -238,7 +238,7 @@ const SiteNavbar = () => {
  {/* Account */}
  <Link
  href="/account"
- className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-[11px]rimary border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 active:scale-95"
+ className="relative p-2.5 rounded-xl bg-background/50 text-foreground hover:bg-primary/10 hover:text-primary border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 active:scale-95"
  aria-label="Account"
  >
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4.5 h-4.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -281,7 +281,7 @@ const SiteNavbar = () => {
  href={subItem.path}
  className={`block py-2.5 px-4 rounded-lg transition-all duration-300 ${
  pathname === subItem.path
- ? "text-[11px]rimary bg-primary/10 font-black"
+ ? "text-primary bg-primary/10 font-black"
  : "text-muted-foreground hover:text-foreground"
  }`}
  >
@@ -300,7 +300,7 @@ const SiteNavbar = () => {
  href={item.path}
  className={`block py-3 px-4 rounded-lg transition-all duration-300 ${
  pathname === item.path
- ? "text-[11px]rimary bg-primary/10 font-black"
+ ? "text-primary bg-primary/10 font-black"
  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
  }`}
  >

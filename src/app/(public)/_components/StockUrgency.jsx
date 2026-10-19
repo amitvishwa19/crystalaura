@@ -28,10 +28,10 @@ const StockUrgency = ({ productId }) => {
 
  return (
  <div className="flex flex-wrap items-center gap-2 mb-6">
- <span className="inline-flex items-center gap-1.5 text-[11px]s px-3 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-destructive">
+ <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-destructive">
  <Flame className="w-3.5 h-3.5" /> Only {stock} left in stock
  </span>
- <span className="inline-flex items-center gap-1.5 text-[11px]s px-3 py-1.5 rounded-full bg-secondary border border-border text-muted-foreground">
+ <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-secondary border border-border text-muted-foreground">
  <Eye className="w-3.5 h-3.5 text-gold" />
  <span className="relative flex w-1.5 h-1.5">
  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />

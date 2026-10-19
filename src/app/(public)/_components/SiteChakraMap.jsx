@@ -122,9 +122,9 @@ const SiteChakraMap = () => {
  {/* Title */}
  <div className="text-center mb-16">
  <div className="w-12 h-12 rounded-full bg-primary/5 border border-primary/20 flex items-center justify-center mx-auto mb-4">
- <SparklesIcon className="w-5 h-5 text-[11px]rimary animate-pulse" />
+ <SparklesIcon className="w-5 h-5 text-primary animate-pulse" />
  </div>
- <p className="text-[11px]rimary text-[10px] font-sans font-black mb-2">
+ <p className="text-primary text-[10px] font-sans font-black mb-2">
  ✦ Energy Map ✦
  </p>
  <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
@@ -244,7 +244,7 @@ const SiteChakraMap = () => {
  {/* Panel Header */}
  <div className="flex items-center gap-4 mb-6">
  <div 
- className="w-12 h-12 rounded-full flex items-center justify-center text-background font-bold text-[11px]l select-none"
+ className="w-12 h-12 rounded-full flex items-center justify-center text-background font-bold text-xl select-none"
  style={{ 
  backgroundColor: selectedChakra.color,
  boxShadow: `0 0 20px ${selectedChakra.color}80` 
@@ -274,7 +274,7 @@ const SiteChakraMap = () => {
  </div>
 
  {/* Healing Crystals Products links */}
- <p className="text-[9px] text-[11px]rimary font-sans font-black mb-3">
+ <p className="text-[9px] text-primary font-sans font-black mb-3">
  ✦ HEALING STONES
  </p>
  <div className="flex flex-wrap gap-2">

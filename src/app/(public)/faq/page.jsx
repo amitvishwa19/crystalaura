@@ -18,7 +18,7 @@ export default function FAQPage() {
  
  {/* FAQ Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-[11px]rimary font-bold block mb-3">
+ <span className="text-[10px] font-sans text-primary font-bold block mb-3">
  ✦ Common Questions ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -50,7 +50,7 @@ export default function FAQPage() {
  >
  <span>{item.question}</span>
  <ChevronDownIcon
- className={`w-4 h-4 text-[11px]rimary transition-transform duration-300 ${
+ className={`w-4 h-4 text-primary transition-transform duration-300 ${
  isOpen ? "rotate-180" : ""
  }`}
  />
@@ -66,7 +66,7 @@ export default function FAQPage() {
  transition={{ duration: 0.3 }}
  className="border-t border-white/5"
  >
- <div className="px-6 py-5 text-[11px]s md:text-sm text-muted-foreground leading-relaxed">
+ <div className="px-6 py-5 text-xs md:text-sm text-muted-foreground leading-relaxed">
  {item.answer}
  </div>
  </motion.div>

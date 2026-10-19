@@ -94,7 +94,7 @@ function LoginForm() {
                                 disabled={loading}
                                 value={data.email}
                                 onChange={(e) => setData({ ...data, email: e.target.value })}
-                                className="bg-[#0B0F19]/50 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-[#00F0FF] focus-visible:ring-offset-0 focus-visible:border-[#00F0FF]"
+                                className="bg-[#0b0b0f]/50 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-[#00F0FF] focus-visible:ring-offset-0 focus-visible:border-[#00F0FF]"
                             />
                         </div>
 
@@ -113,7 +113,7 @@ function LoginForm() {
                                 disabled={loading}
                                 value={data.password}
                                 onChange={(e) => setData({ ...data, password: e.target.value })}
-                                className="bg-[#0B0F19]/50 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-[#00F0FF] focus-visible:ring-offset-0 focus-visible:border-[#00F0FF]"
+                                className="bg-[#0b0b0f]/50 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-[#00F0FF] focus-visible:ring-offset-0 focus-visible:border-[#00F0FF]"
                             />
                         </div>
 

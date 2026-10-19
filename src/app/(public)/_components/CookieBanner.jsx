@@ -35,7 +35,7 @@ const CookieBanner = () => {
  </button>
  <button
  onClick={() => setVisible(false)}
- className="flex items-center gap-1 px-4 py-2 text-sm gold-gradient text-[11px]rimary-foreground rounded-lg hover:opacity-90 transition-opacity"
+ className="flex items-center gap-1 px-4 py-2 text-sm gold-gradient text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
  >
  ✓ Accept All
  </button>

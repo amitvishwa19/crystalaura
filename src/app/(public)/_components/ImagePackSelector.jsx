@@ -42,10 +42,10 @@ export default function ImagePackSelector() {
  exit={{ opacity: 0, scale: 0.9, y: 15 }}
  transition={{ duration: 0.25 }}
  className="glass rounded-2xl border border-white/10 p-3 shadow-2xl w-52 flex flex-col gap-1.5"
- style={{ boxShadow: "0 10px 30px -5px rgba(220,160,40,0.2)" }}
+ style={{ boxShadow: "0 10px 30px -5px rgba(139,92,246,0.2)" }}
  >
  <div className="px-2 py-1 border-b border-white/5 mb-1">
- <p className="text-[9px] font-black text-[11px]rimary-foreground text-gold-gradient">
+ <p className="text-[9px] font-black text-primary-foreground text-gold-gradient">
  Select Image Pack
  </p>
  </div>
@@ -58,12 +58,12 @@ export default function ImagePackSelector() {
  }}
  className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-[10px] font-bold transition-all duration-300 ${
  imagePack === pack.id
- ? "bg-primary/20 text-[11px]rimary border border-primary/20"
+ ? "bg-primary/20 text-primary border border-primary/20"
  : "text-muted-foreground hover:text-white hover:bg-white/5 border border-transparent"
  }`}
  >
  <span>{pack.name}</span>
- {imagePack === pack.id && <CheckIcon className="text-[11px]rimary" />}
+ {imagePack === pack.id && <CheckIcon className="text-primary" />}
  </button>
  ))}
  </motion.div>

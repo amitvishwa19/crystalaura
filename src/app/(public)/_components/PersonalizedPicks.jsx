@@ -51,7 +51,7 @@ const PersonalizedPicks = () => {
  className="text-center mb-10"
  >
  <Compass className="w-7 h-7 text-gold mx-auto mb-2" />
- <p className="text-gold text-[11px]s mb-1">✦ JUST FOR YOU ✦</p>
+ <p className="text-gold text-xs mb-1">✦ JUST FOR YOU ✦</p>
  <h2 className="font-serif text-3xl md:text-4xl">
  <span className="text-gold italic">Personalized</span> Picks
  </h2>
@@ -86,7 +86,7 @@ const PersonalizedPicks = () => {
  <p className="text-gold text-sm mt-1">{format(p.price)}</p>
  <button
  onClick={() => addToCart(p, 1)}
- className="mt-3 border border-gold/40 text-gold py-1.5 rounded-lg text-[11px]s font-medium flex items-center justify-center gap-1.5 hover:bg-gold/10 transition-colors"
+ className="mt-3 border border-gold/40 text-gold py-1.5 rounded-lg text-xs font-medium flex items-center justify-center gap-1.5 hover:bg-gold/10 transition-colors"
  >
  <ShoppingCart className="w-3.5 h-3.5" /> Add to Cart
  </button>

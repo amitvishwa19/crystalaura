@@ -49,7 +49,7 @@ const VibrantBanner = () => {
  transition={{ duration: 0.8 }}
  className="relative rounded-3xl overflow-hidden py-16 px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10"
  style={{
- background: 'linear-gradient(135deg, #1b0c2a 0%, #30071c 50%, #0d0917 100%)',
+ background: 'linear-gradient(135deg, #1b0c2a 0%, #30071c 50%, #0e0e12 100%)',
  boxShadow: '0 20px 50px -10px rgba(48,7,28,0.3)'
  }}
  >
@@ -57,14 +57,14 @@ const VibrantBanner = () => {
  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')]" />
 
  <div className="relative z-10 space-y-4 max-w-xl text-center md:text-left">
- <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full text-[11px]rimary text-[9px] font-sans font-black ">
+ <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full text-primary text-[9px] font-sans font-black ">
  <SparklesIcon className="w-3.5 h-3.5" />
  Special Vedic Blessing
  </div>
  <h2 className="font-serif text-3xl md:text-4xl text-foreground font-medium leading-tight">
  Every crystal is purified with sacred Ganges water &amp; chanting.
  </h2>
- <p className="text-muted-foreground/80 text-[11px]s font-light leading-relaxed max-w-md">
+ <p className="text-muted-foreground/80 text-xs font-light leading-relaxed max-w-md">
  We ensure your items arrive fully cleansed, active, and prepared to merge with your personal field.
  </p>
  </div>
@@ -73,7 +73,7 @@ const VibrantBanner = () => {
  <motion.button 
  whileHover={{ scale: 1.03 }}
  whileTap={{ scale: 0.97 }}
- className="bg-gold-gradient text-white text-[11px]s font-sans font-black px-8 py-4.5 rounded-full flex items-center gap-2 border border-primary/20 hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
+ className="bg-gold-gradient text-white text-xs font-sans font-black px-8 py-4.5 rounded-full flex items-center gap-2 border border-primary/20 hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
  >
  Cleansing Guide
  <ArrowRightIcon className="w-4 h-4" />
@@ -85,7 +85,7 @@ const VibrantBanner = () => {
  {/* 2. Collections Showcase */}
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-16">
- <p className="text-[11px]rimary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-[10px] font-sans font-black mb-3">
  ✦ Sacred Treasures ✦
  </p>
  <h3 className="font-serif text-3xl md:text-5xl text-foreground">
@@ -114,17 +114,17 @@ const VibrantBanner = () => {
  
  {/* Floating details inside image */}
  <div className="absolute bottom-6 left-6 right-6">
- <p className="text-[9px] text-[11px]rimary font-sans font-black mb-1">{col.subtitle}</p>
+ <p className="text-[9px] text-primary font-sans font-black mb-1">{col.subtitle}</p>
  <h4 className="font-serif text-2xl text-foreground font-medium">{col.title}</h4>
  </div>
  </div>
 
  {/* Description box */}
- <div className="p-6 flex-1 flex flex-col justify-between bg-[#0e0b17]/20">
- <p className="text-muted-foreground/80 text-[11px]s leading-relaxed font-light mb-6">
+ <div className="p-6 flex-1 flex flex-col justify-between bg-[#0b0b0e]/20">
+ <p className="text-muted-foreground/80 text-xs leading-relaxed font-light mb-6">
  {col.desc}
  </p>
- <Link href={col.link} className="inline-flex items-center gap-1.5 text-[10px] text-[11px]rimary font-sans font-black group-hover:text-foreground transition-colors duration-300">
+ <Link href={col.link} className="inline-flex items-center gap-1.5 text-[10px] text-primary font-sans font-black group-hover:text-foreground transition-colors duration-300">
  Shop Collection
  <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
  </Link>

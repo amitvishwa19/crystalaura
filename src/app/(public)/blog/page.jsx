@@ -25,7 +25,7 @@ export default function BlogPage() {
  
  {/* Blog Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-[11px]rimary font-bold block mb-3">
+ <span className="text-[10px] font-sans text-primary font-bold block mb-3">
  ✦ Crystal Wisdom ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -58,24 +58,24 @@ export default function BlogPage() {
  alt={post.title}
  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
  />
- <span className="absolute top-4 left-4 bg-background/80 backdrop-blur-md text-[9px] font-black px-3 py-1 rounded-full text-[11px]rimary border border-white/10">
+ <span className="absolute top-4 left-4 bg-background/80 backdrop-blur-md text-[9px] font-black px-3 py-1 rounded-full text-primary border border-white/10">
  {post.category}
  </span>
  </div>
  <div className="p-6 flex-grow flex flex-col justify-between">
  <div>
  <div className="flex items-center gap-4 text-[10px] text-muted-foreground font-mono mb-3">
- <span className="flex items-center gap-1.5"><CalendarIcon className="w-3.5 h-3.5 text-[11px]rimary" /> {post.date}</span>
- <span className="flex items-center gap-1.5"><ClockIcon className="w-3.5 h-3.5 text-[11px]rimary" /> {post.readTime}</span>
+ <span className="flex items-center gap-1.5"><CalendarIcon className="w-3.5 h-3.5 text-primary" /> {post.date}</span>
+ <span className="flex items-center gap-1.5"><ClockIcon className="w-3.5 h-3.5 text-primary" /> {post.readTime}</span>
  </div>
- <h2 className="font-serif text-lg font-bold mb-2 group-hover:text-[11px]rimary transition-colors duration-300">
+ <h2 className="font-serif text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
  {post.title}
  </h2>
- <p className="text-[11px]s text-muted-foreground leading-relaxed line-clamp-3 mb-6">
+ <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 mb-6">
  {post.excerpt}
  </p>
  </div>
- <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[11px]rimary transition-all duration-300 group-hover:translate-x-1.5">
+ <span className="inline-flex items-center gap-2 text-[10px] font-bold text-primary transition-all duration-300 group-hover:translate-x-1.5">
  Read Entry <ArrowRightIcon className="w-3.5 h-3.5" />
  </span>
  </div>

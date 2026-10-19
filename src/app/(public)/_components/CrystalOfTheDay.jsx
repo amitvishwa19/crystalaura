@@ -48,17 +48,17 @@ const CrystalOfTheDay = () => {
  <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
  <div className="absolute top-4 left-4 inline-flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-gold/40 px-3 py-1.5 rounded-full">
  <Sparkles className="w-4 h-4 text-gold" />
- <span className="text-[11px]s text-gold ">Crystal of the Day</span>
+ <span className="text-xs text-gold ">Crystal of the Day</span>
  </div>
  </div>
  <div className="p-8 md:p-10 flex flex-col justify-center">
- <p className="text-gold text-[11px]s mb-2">
+ <p className="text-gold text-xs mb-2">
  ✦ {new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}
  </p>
  <h2 className="font-serif text-3xl md:text-4xl mb-3">
  <span className="text-gold italic">Today's</span> Sacred Stone
  </h2>
- <h3 className="font-serif text-[11px]l md:text-2xl mb-3">{product.name}</h3>
+ <h3 className="font-serif text-xl md:text-2xl mb-3">{product.name}</h3>
  <p className="text-muted-foreground text-sm mb-4">{message}</p>
  <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">{product.description}</p>
  <div className="flex items-baseline gap-3 mb-6">
@@ -69,7 +69,7 @@ const CrystalOfTheDay = () => {
  </div>
  <Link
  href={`/product/${product.id}`}
- className="gold-gradient text-[11px]rimary-foreground px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity self-start"
+ className="gold-gradient text-primary-foreground px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity self-start"
  >
  Discover Today's Crystal <ArrowRight className="w-4 h-4" />
  </Link>

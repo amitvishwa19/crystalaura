@@ -34,7 +34,7 @@ export default function AboutPage() {
  
  {/* About Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-[11px]rimary font-bold block mb-3">
+ <span className="text-[10px] font-sans text-primary font-bold block mb-3">
  ✦ Our Journey ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -48,14 +48,14 @@ export default function AboutPage() {
  {...fadeUp}
  className="glass-card rounded-3xl p-8 md:p-16 mb-16 border border-white/5 relative overflow-hidden"
  >
- <blockquote className="font-serif text-[11px]l md:text-2xl italic text-center text-muted-foreground leading-relaxed mb-12 border-b border-white/5 pb-8">
+ <blockquote className="font-serif text-xl md:text-2xl italic text-center text-muted-foreground leading-relaxed mb-12 border-b border-white/5 pb-8">
  "Crystal Aura was born from a deep love for the earth's hidden treasures and a sacred mission to heal world through frequency."
  </blockquote>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
- <p className="text-[11px]s md:text-sm text-muted-foreground leading-relaxed">
+ <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
  We are a team of crystal healers, Vastu Shastra consultants, and spiritual practitioners based in Mumbai, India — dedicated to sourcing and cataloging only the most authentic and energetically charged gemstones.
  </p>
- <p className="text-[11px]s md:text-sm text-muted-foreground leading-relaxed">
+ <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
  Our mission is simple: to make the healing power of crystals accessible to everyone. Whether you are a seasoned practitioner or just beginning your spiritual journey, we provide the tools and guidance you need.
  </p>
  </div>
@@ -77,10 +77,10 @@ export default function AboutPage() {
  transition={{ duration: 0.5, delay: i * 0.05 }}
  className="glass-card rounded-2xl p-6 text-center border border-white/5 hover:border-primary/20 transition-all duration-300"
  >
- <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-primary/10 text-[11px]rimary border border-primary/20 mx-auto mb-4">
+ <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-primary/10 text-primary border border-primary/20 mx-auto mb-4">
  <stat.icon className="w-5 h-5" />
  </div>
- <p className="font-serif text-[11px]l md:text-2xl font-bold text-foreground mb-1">{stat.value}</p>
+ <p className="font-serif text-xl md:text-2xl font-bold text-foreground mb-1">{stat.value}</p>
  <p className="text-[10px] text-muted-foreground font-bold">{stat.label}</p>
  </motion.div>
  ))}

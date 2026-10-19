@@ -1,39 +1,39 @@
-/* Premium spiritual styling custom rules */
+/* CrystalAura storefront theme — modern neutral + violet accents */
 
 .crystal-aura {
-  --background: 260 25% 7%;
-  --foreground: 40 25% 92%;
+  --background: 240 10% 4%;
+  --foreground: 0 0% 98%;
 
-  --card: 260 22% 11%;
-  --card-foreground: 40 25% 92%;
+  --card: 240 6% 10%;
+  --card-foreground: 0 0% 98%;
 
-  --popover: 260 22% 11%;
-  --popover-foreground: 40 25% 92%;
+  --popover: 240 6% 10%;
+  --popover-foreground: 0 0% 98%;
 
-  --primary: 41 56% 58%;
-  --primary-foreground: 260 25% 8%;
+  --primary: 258 90% 66%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 260 18% 15%;
-  --secondary-foreground: 40 25% 92%;
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 98%;
 
-  --muted: 260 15% 16%;
-  --muted-foreground: 40 12% 65%;
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 65%;
 
-  --accent: 270 55% 60%;
-  --accent-foreground: 40 25% 96%;
+  --accent: 258 90% 66%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 75% 55%;
-  --destructive-foreground: 40 25% 96%;
+  --destructive: 0 72% 56%;
+  --destructive-foreground: 0 0% 98%;
 
-  --border: 260 18% 20%;
-  --input: 260 18% 20%;
-  --ring: 41 56% 58%;
+  --border: 240 5% 20%;
+  --input: 240 5% 20%;
+  --ring: 258 90% 66%;
 
-  --gold: 41 56% 58%;
-  --glass-bg: 260 22% 11% / 0.75;
-  --glass-border: 41 30% 30% / 0.4;
-  --scrollbar-track: 260 25% 7%;
-  --scrollbar-thumb: 41 30% 35%;
+  --gold: 258 90% 66%;
+  --glass-bg: 240 6% 10% / 0.75;
+  --glass-border: 240 5% 30% / 0.4;
+  --scrollbar-track: 240 10% 4%;
+  --scrollbar-thumb: 240 5% 26%;
 
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -50,50 +50,50 @@
 }
 
 .crystal-aura.light {
-  --background: 40 30% 96%;
-  --foreground: 30 15% 15%;
+  --background: 0 0% 100%;
+  --foreground: 240 10% 4%;
 
-  --card: 40 25% 98%;
-  --card-foreground: 30 15% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 4%;
 
-  --popover: 40 25% 98%;
-  --popover-foreground: 30 15% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 4%;
 
-  --primary: 40 65% 42%;
-  --primary-foreground: 40 30% 98%;
+  --primary: 258 90% 58%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 40 15% 90%;
-  --secondary-foreground: 30 15% 25%;
+  --secondary: 240 5% 96%;
+  --secondary-foreground: 240 6% 10%;
 
-  --muted: 40 10% 88%;
-  --muted-foreground: 30 10% 45%;
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 4% 46%;
 
-  --accent: 280 40% 50%;
-  --accent-foreground: 40 30% 98%;
+  --accent: 258 90% 66%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 40 15% 85%;
-  --input: 40 15% 85%;
-  --ring: 40 65% 42%;
+  --border: 240 6% 90%;
+  --input: 240 6% 90%;
+  --ring: 258 90% 58%;
 
-  --gold: 40 65% 42%;
-  --glass-bg: 40 30% 100% / 0.7;
-  --glass-border: 40 25% 84%;
-  --scrollbar-track: 40 25% 94%;
-  --scrollbar-thumb: 40 35% 65%;
+  --gold: 258 90% 58%;
+  --glass-bg: 0 0% 100% / 0.7;
+  --glass-border: 240 6% 88%;
+  --scrollbar-track: 240 5% 94%;
+  --scrollbar-thumb: 240 5% 70%;
 }
 
 
-/* Subtle gold shimmer — reduced intensity for modern look */
+/* Violet shimmer accent */
 .shimmer-text {
   background: linear-gradient(
     to right,
-    hsl(35 80% 65%) 0%,
-    hsl(35 85% 45%) 30%,
-    hsl(35 80% 65%) 70%,
-    hsl(35 85% 45%) 100%
+    #a78bfa 0%,
+    #7c3aed 30%,
+    #a78bfa 70%,
+    #7c3aed 100%
   );
   background-size: 200% auto;
   color: transparent;
@@ -105,10 +105,10 @@
 .light .shimmer-text {
   background: linear-gradient(
     to right,
-    hsl(35 80% 55%) 0%,
-    hsl(35 85% 40%) 30%,
-    hsl(35 80% 55%) 70%,
-    hsl(35 85% 40%) 100%
+    #8b5cf6 0%,
+    #6d28d9 30%,
+    #8b5cf6 70%,
+    #6d28d9 100%
   );
   background-size: 200% auto;
   color: transparent;
@@ -127,21 +127,21 @@
 
 /* Subtle ambient orbs */
 .orb-glow-primary {
-  background: radial-gradient(circle, hsl(270 50% 60% / 0.1) 0%, hsl(270 50% 60% / 0) 70%);
+  background: radial-gradient(circle, hsl(258 90% 66% / 0.12) 0%, hsl(258 90% 66% / 0) 70%);
   animation: orbFloat 30s ease-in-out infinite alternate;
 }
 
 .orb-glow-accent {
-  background: radial-gradient(circle, hsl(35 85% 56% / 0.08) 0%, hsl(35 85% 56% / 0) 70%);
+  background: radial-gradient(circle, hsl(258 90% 58% / 0.1) 0%, hsl(258 90% 58% / 0) 70%);
   animation: orbFloatDouble 40s ease-in-out infinite alternate-reverse;
 }
 
 .light .orb-glow-primary {
-  background: radial-gradient(circle, hsl(270 45% 55% / 0.06) 0%, hsl(270 45% 55% / 0) 70%);
+  background: radial-gradient(circle, hsl(258 85% 58% / 0.08) 0%, hsl(258 85% 58% / 0) 70%);
 }
 
 .light .orb-glow-accent {
-  background: radial-gradient(circle, hsl(35 80% 50% / 0.05) 0%, hsl(35 80% 50% / 0) 70%);
+  background: radial-gradient(circle, hsl(258 80% 62% / 0.07) 0%, hsl(258 80% 62% / 0) 70%);
 }
 
 @keyframes orbFloat {
@@ -179,20 +179,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(240 3% 25%);
+  background: hsl(240 5% 26%);
   border-radius: 99px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(35 85% 56%);
+  background: hsl(258 90% 66%);
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background: hsl(240 3% 70%);
+  background: hsl(240 5% 70%);
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: hsl(35 80% 50%);
+  background: hsl(258 90% 58%);
 }
 
 /* Subtle card hover */
@@ -200,23 +200,24 @@
   transition: all 0.4s ease;
 }
 .hover-glow-card:hover {
-  box-shadow: 0 8px 24px -8px hsl(35 85% 56% / 0.15);
-  border-color: hsl(35 85% 56% / 0.25) !important;
+  box-shadow: 0 8px 24px -8px hsl(258 90% 66% / 0.18);
+  border-color: hsl(258 90% 66% / 0.3) !important;
 }
 
 .light .hover-glow-card:hover {
-  box-shadow: 0 8px 24px -8px hsl(35 80% 50% / 0.15);
-  border-color: hsl(35 80% 50% / 0.2) !important;
+  box-shadow: 0 8px 24px -8px hsl(258 90% 58% / 0.18);
+  border-color: hsl(258 90% 58% / 0.25) !important;
 }
 
-/* Clean gold accents */
+/* Violet accent gradients */
 .text-gold-gradient {
-  background: linear-gradient(135deg, hsl(35 80% 60%) 0%, hsl(35 85% 45%) 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.bg-gold-gradient {
-  background: linear-gradient(135deg, hsl(35 85% 56%) 0%, hsl(35 80% 40%) 100%);
+.bg-gold-gradient,
+.gold-gradient {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
 }

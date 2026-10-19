@@ -21,13 +21,13 @@ const RecentlyViewed = ({ excludeId }) => {
  <div className="flex items-center justify-between mb-6">
  <div className="flex items-center gap-2">
  <Clock className="w-4 h-4 text-gold" />
- <h2 className="font-serif text-[11px]l md:text-2xl">
+ <h2 className="font-serif text-xl md:text-2xl">
  Recently <span className="text-gold italic">Viewed</span>
  </h2>
  </div>
  <button
  onClick={clear}
- className="text-[11px]s text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+ className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
  aria-label="Clear recently viewed"
  >
  <X className="w-3 h-3" /> Clear
@@ -54,7 +54,7 @@ const RecentlyViewed = ({ excludeId }) => {
  />
  </div>
  <div className="p-3">
- <h3 className="text-[11px]s font-medium line-clamp-1">{p.name}</h3>
+ <h3 className="text-xs font-medium line-clamp-1">{p.name}</h3>
  <p className="text-gold text-sm mt-1">₹{p.price.toLocaleString()}</p>
  </div>
  </Link>

@@ -18,17 +18,17 @@ export default {
         sm: '4px'
       },
       colors: {
-        darkPrimaryBackground: '#0E141B',
-        darkSecondaryBackground: '#171F26',
-        darkFocusColor: '#1C2736',
-        darkfocus: '#181716',
+        darkPrimaryBackground: '#0b0b0e',
+        darkSecondaryBackground: '#131318',
+        darkFocusColor: '#1b1b22',
+        darkfocus: '#18181b',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        darkbackground: '#0C0E12',
-        darkcontent: '#111318',
+        darkbackground: '#09090b',
+        darkcontent: '#101014',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

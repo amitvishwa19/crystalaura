@@ -130,7 +130,7 @@ const AccountPage = () => {
  <div className="min-h-screen pt-28 pb-20 px-6">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-10">
- <p className="text-[10px] font-sans font-black text-[11px]rimary mb-3">Account</p>
+ <p className="text-[10px] font-sans font-black text-primary mb-3">Account</p>
  <h1 className="font-serif text-3xl md:text-4xl text-foreground">
  My <span className="text-gold-gradient italic">Dashboard</span>
  </h1>
@@ -139,13 +139,13 @@ const AccountPage = () => {
  <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
  {/* Sidebar */}
  <div>
- <div className="rounded-2xl border border-white/5 bg-[#0e0b17]/50 backdrop-blur-md p-6 sticky top-28" style={{ boxShadow: '0 10px 30px -10px rgba(0,0,0,0.3)' }}>
+ <div className="rounded-2xl border border-white/5 bg-[#0b0b0e]/50 backdrop-blur-md p-6 sticky top-28" style={{ boxShadow: '0 10px 30px -10px rgba(0,0,0,0.3)' }}>
  <div className="flex flex-col items-center text-center pb-5 border-b border-white/5">
  <div className="w-16 h-16 rounded-full border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-3 overflow-hidden">
  {displayImage ? (
  <img src={displayImage} alt="" className="w-full h-full object-cover" />
  ) : (
- <UserIcon className="w-7 h-7 text-[11px]rimary" />
+ <UserIcon className="w-7 h-7 text-primary" />
  )}
  </div>
  <h3 className="font-serif text-base text-foreground">{displayName}</h3>
@@ -169,7 +169,7 @@ const AccountPage = () => {
  <span>{tab.label}</span>
  {count !== null && (
  <span className={`text-[9px] px-2 py-0.5 rounded-full ${
- isActive ? "bg-primary/20 text-[11px]rimary" : "bg-white/5 text-muted-foreground"
+ isActive ? "bg-primary/20 text-primary" : "bg-white/5 text-muted-foreground"
  }`}>
  {count}
  </span>
@@ -212,18 +212,18 @@ const AccountPage = () => {
  initial={{ opacity: 0, y: 10 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.3 }}
- className="rounded-2xl border border-white/5 bg-[#0e0b17]/50 backdrop-blur-md p-8 min-h-[500px]"
+ className="rounded-2xl border border-white/5 bg-[#0b0b0e]/50 backdrop-blur-md p-8 min-h-[500px]"
  style={{ boxShadow: '0 15px 35px -10px rgba(0,0,0,0.3)' }}
  >
  {active === "orders" && (
  <div>
  <div className="flex items-center justify-between mb-6">
  <div>
- <h2 className="font-serif text-[11px]l text-foreground">Order History</h2>
+ <h2 className="font-serif text-xl text-foreground">Order History</h2>
  <p className="text-[10px] text-muted-foreground/70 mt-1 font-sans font-bold ">Track and manage your orders</p>
  </div>
  {orders.length > 0 && (
- <Link href="/orders" className="text-[10px] font-sans font-black text-[11px]rimary bg-primary/10 border border-primary/20 px-4 py-2 rounded-xl hover:bg-primary/20 transition-all">
+ <Link href="/orders" className="text-[10px] font-sans font-black text-primary bg-primary/10 border border-primary/20 px-4 py-2 rounded-xl hover:bg-primary/20 transition-all">
  View All
  </Link>
  )}
@@ -232,8 +232,8 @@ const AccountPage = () => {
  <div className="border border-dashed border-white/10 rounded-xl py-16 flex flex-col items-center text-center">
  <PackageIcon className="w-8 h-8 text-muted-foreground/40 mb-4" />
  <h3 className="font-serif text-lg text-foreground">No orders yet</h3>
- <p className="text-[11px]s text-muted-foreground/60 mt-1 font-light mb-6">Start your crystal journey with us</p>
- <Link href="/shop" className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <p className="text-xs text-muted-foreground/60 mt-1 font-light mb-6">Start your crystal journey with us</p>
+ <Link href="/shop" className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
  Browse Shop
  </Link>
  </div>
@@ -246,10 +246,10 @@ const AccountPage = () => {
  className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-primary/20 transition-all group"
  >
  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0">
- <PackageIcon className="w-5 h-5 text-muted-foreground group-hover:text-[11px]rimary transition-colors" />
+ <PackageIcon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
  </div>
  <div className="flex-1 min-w-0">
- <p className="text-[11px]s text-foreground font-sans font-bold truncate">{order.id}</p>
+ <p className="text-xs text-foreground font-sans font-bold truncate">{order.id}</p>
  <p className="text-[10px] text-muted-foreground/60 mt-0.5">{order.items.length} {order.items.length === 1 ? "item" : "items"} — ₹{order.total}</p>
  </div>
  <div className="text-right">
@@ -263,7 +263,7 @@ const AccountPage = () => {
  </Link>
  ))}
  {orders.length > 5 && (
- <Link href="/orders" className="block text-center text-[10px] font-sans font-black text-[11px]rimary mt-4 hover:underline">
+ <Link href="/orders" className="block text-center text-[10px] font-sans font-black text-primary mt-4 hover:underline">
  View all {orders.length} orders
  </Link>
  )}
@@ -276,11 +276,11 @@ const AccountPage = () => {
  <div>
  <div className="flex items-center justify-between mb-6">
  <div>
- <h2 className="font-serif text-[11px]l text-foreground">Shopping Cart</h2>
+ <h2 className="font-serif text-xl text-foreground">Shopping Cart</h2>
  <p className="text-[10px] text-muted-foreground/70 mt-1 font-sans font-bold ">{totalItems} {totalItems === 1 ? "item" : "items"} — ₹{totalPrice}</p>
  </div>
  {cartItems.length > 0 && (
- <Link href="/checkout" className="text-[10px] font-sans font-black px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <Link href="/checkout" className="text-[10px] font-sans font-black px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
  Checkout
  </Link>
  )}
@@ -289,8 +289,8 @@ const AccountPage = () => {
  <div className="border border-dashed border-white/10 rounded-xl py-16 flex flex-col items-center text-center">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-muted-foreground/40 mb-4"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
  <h3 className="font-serif text-lg text-foreground">Your cart is empty</h3>
- <p className="text-[11px]s text-muted-foreground/60 mt-1 font-light mb-6">Discover our sacred collection</p>
- <Link href="/shop" className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <p className="text-xs text-muted-foreground/60 mt-1 font-light mb-6">Discover our sacred collection</p>
+ <Link href="/shop" className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
  Browse Shop
  </Link>
  </div>
@@ -307,14 +307,14 @@ const AccountPage = () => {
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
  </button>
  </div>
- <p className="text-[11px]s text-[11px]rimary font-sans font-bold mt-0.5">₹{item.product.priceNum || item.product.price}</p>
+ <p className="text-xs text-primary font-sans font-bold mt-0.5">₹{item.product.priceNum || item.product.price}</p>
  </div>
  <div className="flex items-center gap-2">
- <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-[11px]s">
+ <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-xs">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><path d="M5 12h14"/></svg>
  </button>
- <span className="text-[11px]s font-sans font-bold text-foreground w-6 text-center">{item.quantity}</span>
- <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-[11px]s">
+ <span className="text-xs font-sans font-bold text-foreground w-6 text-center">{item.quantity}</span>
+ <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-xs">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
  </button>
  </div>
@@ -329,15 +329,15 @@ const AccountPage = () => {
  {active === "wishlist" && (
  <div>
  <div className="mb-6">
- <h2 className="font-serif text-[11px]l text-foreground">My Wishlist</h2>
+ <h2 className="font-serif text-xl text-foreground">My Wishlist</h2>
  <p className="text-[10px] text-muted-foreground/70 mt-1 font-sans font-bold ">{wishlistItems.length} saved items</p>
  </div>
  {wishlistItems.length === 0 ? (
  <div className="border border-dashed border-white/10 rounded-xl py-16 flex flex-col items-center text-center">
  <HeartIcon className="w-8 h-8 text-muted-foreground/40 mb-4" />
  <h3 className="font-serif text-lg text-foreground">No favorites yet</h3>
- <p className="text-[11px]s text-muted-foreground/60 mt-1 font-light mb-6">Tap the heart on any product to save it</p>
- <Link href="/shop" className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <p className="text-xs text-muted-foreground/60 mt-1 font-light mb-6">Tap the heart on any product to save it</p>
+ <Link href="/shop" className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
  Browse Shop
  </Link>
  </div>
@@ -349,8 +349,8 @@ const AccountPage = () => {
  <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
  </div>
  <div className="p-3">
- <p className="text-[11px]s text-foreground font-sans font-bold truncate">{p.name}</p>
- <p className="text-[11px]s text-[11px]rimary font-sans font-bold mt-1">₹{p.priceNum || p.price}</p>
+ <p className="text-xs text-foreground font-sans font-bold truncate">{p.name}</p>
+ <p className="text-xs text-primary font-sans font-bold mt-1">₹{p.priceNum || p.price}</p>
  </div>
  </Link>
  ))}
@@ -362,7 +362,7 @@ const AccountPage = () => {
  {active === "profile" && (
  <div>
  <div className="mb-6">
- <h2 className="font-serif text-[11px]l text-foreground">Profile</h2>
+ <h2 className="font-serif text-xl text-foreground">Profile</h2>
  <p className="text-[10px] text-muted-foreground/70 mt-1 font-sans font-bold ">Manage your personal information</p>
  </div>
  <div className="max-w-xl space-y-5">
@@ -380,7 +380,7 @@ const AccountPage = () => {
  </div>
  <button
  onClick={saveProfile}
- className="text-[10px] font-sans font-black px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20"
+ className="text-[10px] font-sans font-black px-8 py-3.5 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20"
  >
  {profileSaved ? "Saved ✓" : "Save Changes"}
  </button>
@@ -392,12 +392,12 @@ const AccountPage = () => {
  <div>
  <div className="flex items-center justify-between mb-6">
  <div>
- <h2 className="font-serif text-[11px]l text-foreground">Saved Addresses</h2>
+ <h2 className="font-serif text-xl text-foreground">Saved Addresses</h2>
  <p className="text-[10px] text-muted-foreground/70 mt-1 font-sans font-bold ">Manage your shipping addresses</p>
  </div>
  <button
  onClick={() => { setShowAddressForm(true); setEditingAddress(null); resetAddressForm(); }}
- className="text-[10px] font-sans font-black px-5 py-2.5 rounded-xl bg-primary/10 text-[11px]rimary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all"
+ className="text-[10px] font-sans font-black px-5 py-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all"
  >
  + Add New
  </button>
@@ -407,7 +407,7 @@ const AccountPage = () => {
  <div className="border border-dashed border-white/10 rounded-xl py-16 flex flex-col items-center text-center">
  <MapPinIcon className="w-8 h-8 text-muted-foreground/40 mb-4" />
  <h3 className="font-serif text-lg text-foreground">No addresses saved</h3>
- <p className="text-[11px]s text-muted-foreground/60 mt-1 font-light">Add an address for faster checkout</p>
+ <p className="text-xs text-muted-foreground/60 mt-1 font-light">Add an address for faster checkout</p>
  </div>
  ) : (
  <div className="space-y-3 mb-6">
@@ -415,9 +415,9 @@ const AccountPage = () => {
  <div key={addr.id} className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
  <div className="flex-1 min-w-0">
  <div className="flex items-center gap-2">
- <p className="text-[11px]s text-foreground font-sans font-bold">{addr.name}</p>
+ <p className="text-xs text-foreground font-sans font-bold">{addr.name}</p>
  {addr.isDefault && (
- <span className="text-[8px] font-sans font-black px-1.5 py-0.5 rounded-full bg-primary/10 text-[11px]rimary border border-primary/20">Default</span>
+ <span className="text-[8px] font-sans font-black px-1.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">Default</span>
  )}
  </div>
  <p className="text-[10px] text-muted-foreground/70 mt-0.5">{addr.address}</p>
@@ -442,7 +442,7 @@ const AccountPage = () => {
  exit={{ opacity: 0, height: 0 }}
  className="overflow-hidden border border-white/5 rounded-2xl p-5 bg-white/[0.02]"
  >
- <h3 className="text-[11px]s font-serif text-foreground mb-4">{editingAddress ? "Edit Address" : "New Address"}</h3>
+ <h3 className="text-xs font-serif text-foreground mb-4">{editingAddress ? "Edit Address" : "New Address"}</h3>
  <div className="space-y-4">
  <div>
  <label className="text-[9px] font-sans font-black text-muted-foreground mb-1 block">Label (e.g. Home, Office)</label>
@@ -481,7 +481,7 @@ const AccountPage = () => {
  <span className="text-[10px] font-sans font-bold text-muted-foreground">Set as default address</span>
  </label>
  <div className="flex gap-3 pt-2">
- <button onClick={saveAddress} className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
+ <button onClick={saveAddress} className="text-[10px] font-sans font-black px-6 py-3 rounded-xl bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20 border border-primary/20">
  {editingAddress ? "Update Address" : "Save Address"}
  </button>
  <button onClick={() => { setShowAddressForm(false); setEditingAddress(null); resetAddressForm(); }} className="text-[10px] font-sans font-black px-6 py-3 rounded-xl border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 transition-all">

@@ -167,7 +167,7 @@ const Results = ({ answers, onReset }) => {
  </p>
  <div className="flex flex-wrap justify-center gap-2 mt-5">
  {recommendedTags.map((t) => (
- <span key={t} className="text-[11px]s border border-gold/40 bg-gold/10 text-gold px-3 py-1 rounded-full">{t}</span>
+ <span key={t} className="text-xs border border-gold/40 bg-gold/10 text-gold px-3 py-1 rounded-full">{t}</span>
  ))}
  </div>
  </div>
@@ -179,7 +179,7 @@ const Results = ({ answers, onReset }) => {
  <Link href={`/product/${p.id}`}>
  <img src={p.image} alt={p.name} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
  </Link>
- <span className="absolute top-3 left-3 bg-background/80 backdrop-blur-sm text-gold text-[11px]s px-3 py-1 rounded-full font-medium border border-gold/40">
+ <span className="absolute top-3 left-3 bg-background/80 backdrop-blur-sm text-gold text-xs px-3 py-1 rounded-full font-medium border border-gold/40">
  {i === 0 ? "✦ Top Match" : `#${i + 1} Match`}
  </span>
  <button onClick={() => toggleWishlist(p.id)} className="absolute top-3 right-3 w-9 h-9 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-background">
@@ -191,13 +191,13 @@ const Results = ({ answers, onReset }) => {
  <Link href={`/product/${p.id}`} className="font-serif font-semibold mt-1 hover:text-gold transition-colors">{p.name}</Link>
  <div className="flex items-center gap-1 mt-1">
  <Star className="w-3 h-3 text-gold fill-current" />
- <span className="text-[11px]s text-muted-foreground">{p.rating} · {p.reviews} reviews</span>
+ <span className="text-xs text-muted-foreground">{p.rating} · {p.reviews} reviews</span>
  </div>
  <div className="flex items-baseline gap-2 mt-3">
  <span className="text-gold font-semibold">₹{p.price.toLocaleString()}</span>
- {p.originalPrice && <span className="text-[11px]s text-muted-foreground line-through">₹{p.originalPrice.toLocaleString()}</span>}
+ {p.originalPrice && <span className="text-xs text-muted-foreground line-through">₹{p.originalPrice.toLocaleString()}</span>}
  </div>
- <button onClick={() => addToCart(p, 1)} className="mt-4 gold-gradient text-[11px]rimary-foreground py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+ <button onClick={() => addToCart(p, 1)} className="mt-4 gold-gradient text-primary-foreground py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
  <ShoppingCart className="w-4 h-4" /> Add to Cart
  </button>
  </div>
@@ -222,7 +222,7 @@ const Results = ({ answers, onReset }) => {
  <button onClick={onReset} className="border border-border text-muted-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:text-foreground transition-colors flex items-center gap-2">
  <RotateCcw className="w-4 h-4" /> Retake Quiz
  </button>
- <Link href="/shop" className="gold-gradient text-[11px]rimary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+ <Link href="/shop" className="gold-gradient text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
  Explore Full Shop →
  </Link>
  </div>
@@ -242,7 +242,7 @@ const Results = ({ answers, onReset }) => {
  className="flex-1 bg-secondary border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
  required
  />
- <button type="submit" className="gold-gradient text-[11px]rimary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+ <button type="submit" className="gold-gradient text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
  Send
  </button>
  </motion.form>
@@ -285,7 +285,7 @@ const QuizSection = () => {
  ) : (
  <div className="max-w-3xl mx-auto">
  <div className="mb-6">
- <div className="flex items-center justify-between text-[11px]s text-muted-foreground mb-2">
+ <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
  <span>Question {step + 1} of {quizQuestions.length}</span>
  <button onClick={reset} className="flex items-center gap-1 hover:text-foreground transition-colors">
  <RotateCcw className="w-3 h-3" /> Restart

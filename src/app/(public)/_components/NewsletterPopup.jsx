@@ -64,13 +64,13 @@ const NewsletterPopup = () => {
  {/* Decorative gradient header */}
  <div className="relative h-32 gold-gradient flex items-center justify-center overflow-hidden">
  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 30% 20%, white 1px, transparent 1px), radial-gradient(circle at 70% 60%, white 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
- <Sparkles className="w-10 h-10 text-[11px]rimary-foreground relative" />
+ <Sparkles className="w-10 h-10 text-primary-foreground relative" />
  </div>
 
  <div className="p-7 text-center">
  {!subscribed ? (
  <>
- <p className="text-gold text-[11px]s mb-2">✦ JOIN THE AURA CIRCLE ✦</p>
+ <p className="text-gold text-xs mb-2">✦ JOIN THE AURA CIRCLE ✦</p>
  <h3 className="font-serif text-2xl md:text-3xl mb-2">Unlock <span className="text-gold italic">10% Off</span></h3>
  <p className="text-sm text-muted-foreground mb-5">
  Subscribe for crystal wisdom, new arrivals, and your welcome discount.
@@ -84,22 +84,22 @@ const NewsletterPopup = () => {
  placeholder="your@email.com"
  className="w-full bg-secondary/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold/50"
  />
- <button type="submit" className="w-full gold-gradient text-[11px]rimary-foreground py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+ <button type="submit" className="w-full gold-gradient text-primary-foreground py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
  Reveal My Code
  </button>
  </form>
- <button onClick={close} className="text-[11px]s text-muted-foreground hover:text-foreground mt-4">No thanks, I'll pay full price</button>
+ <button onClick={close} className="text-xs text-muted-foreground hover:text-foreground mt-4">No thanks, I'll pay full price</button>
  </>
  ) : (
  <>
- <p className="text-gold text-[11px]s mb-2">✦ WELCOME, SEEKER ✦</p>
+ <p className="text-gold text-xs mb-2">✦ WELCOME, SEEKER ✦</p>
  <h3 className="font-serif text-2xl md:text-3xl mb-3">Your Code is Ready</h3>
  <p className="text-sm text-muted-foreground mb-5">Use it at checkout for <span className="text-gold">10% off</span> your first order.</p>
  <button onClick={copy} className="w-full border-2 border-dashed border-gold/50 bg-gold/10 rounded-lg py-4 flex items-center justify-center gap-3 hover:bg-gold/20 transition-colors">
  <span className="font-serif text-2xl text-gold">{CODE}</span>
  {copied ? <Check className="w-5 h-5 text-gold" /> : <Copy className="w-5 h-5 text-gold" />}
  </button>
- <button onClick={close} className="mt-5 text-sm gold-gradient text-[11px]rimary-foreground px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">
+ <button onClick={close} className="mt-5 text-sm gold-gradient text-primary-foreground px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">
  Start Shopping →
  </button>
  </>

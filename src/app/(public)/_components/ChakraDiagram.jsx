@@ -101,7 +101,7 @@ const ChakraDiagram = () => {
  {active.sanskrit}
  </div>
  <div>
- <p className="text-[11px]s"style={{ color: active.color }}>{active.element}</p>
+ <p className="text-xs"style={{ color: active.color }}>{active.element}</p>
  <h3 className="font-serif text-2xl">{active.name} <span className="text-muted-foreground text-base">— {active.english}</span></h3>
  </div>
  </div>
@@ -117,7 +117,7 @@ const ChakraDiagram = () => {
  <Link
  key={c}
  href={`/shop?search=${encodeURIComponent(c)}`}
- className="text-[11px]s border border-border bg-secondary/40 hover:border-gold/50 hover:bg-secondary px-3 py-1.5 rounded-full transition-colors"
+ className="text-xs border border-border bg-secondary/40 hover:border-gold/50 hover:bg-secondary px-3 py-1.5 rounded-full transition-colors"
  >
  {c}
  </Link>

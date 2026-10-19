@@ -16,7 +16,7 @@ export const metadata = {
 export default function CrystalAuraLayout({ children }) {
     return (
         <CrystalAuraProviders>
-            <div className="relative min-h-screen flex flex-col bg-background text-foreground antialiased selection:bg-primary/20 selection:text-[11px]rimary">
+            <div className="relative min-h-screen flex flex-col bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
                 {/* Subtle ambient background */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20">
                     <div className="absolute top-[5%] left-[5%] w-[40vw] h-[40vw] rounded-full blur-[150px] orb-glow-primary opacity-30" />

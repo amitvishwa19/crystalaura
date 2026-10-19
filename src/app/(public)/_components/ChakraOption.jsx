@@ -15,14 +15,14 @@ const ChakraOption = ({ id, isActive, onClick }) => {
  }`}
  >
  <div 
- className="w-8 h-8 rounded-full flex items-center justify-center text-[11px]s font-bold"
+ className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
  style={{ backgroundColor: chakra.color, color: "#fff" }}
  >
  {chakra.sanskrit}
  </div>
  <div className="text-left">
  <p className="text-sm font-medium">{chakra.name}</p>
- <p className="text-[11px]s text-muted-foreground">{chakra.english}</p>
+ <p className="text-xs text-muted-foreground">{chakra.english}</p>
  </div>
  </button>
  );

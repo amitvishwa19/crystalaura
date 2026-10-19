@@ -65,7 +65,7 @@ const ProductCard = ({ id, image, title, description, price, delay = 0 }) => {
  >
  <HeartIcon
  className={`w-4 h-4 transition-colors ${
- wishlisted ? "text-[11px]rimary" : "text-white"
+ wishlisted ? "text-primary" : "text-white"
  }`}
  fill={wishlisted ? "currentColor" : "none"}
  />
@@ -81,7 +81,7 @@ const ProductCard = ({ id, image, title, description, price, delay = 0 }) => {
  {id && (
  <button
  onClick={handleAddToCart}
- className="w-12 glass rounded-xl border border-white/10 text-[11px]rimary py-3 hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center"
+ className="w-12 glass rounded-xl border border-white/10 text-primary py-3 hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center"
  aria-label="Add to Cart"
  >
  <ShoppingBagIcon className="w-4 h-4" />
@@ -90,12 +90,12 @@ const ProductCard = ({ id, image, title, description, price, delay = 0 }) => {
  </div>
 
  {/* Price badge */}
- <div className="absolute top-3 right-3 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px]rimary font-serif text-[11px]s font-bold shadow-lg">
+ <div className="absolute top-3 right-3 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-primary font-serif text-xs font-bold shadow-lg">
  ₹{price.toLocaleString()}
  </div>
  </div>
  <div className="px-1 text-center mt-2">
- <h3 className="font-serif text-lg font-bold text-foreground group-hover:text-[11px]rimary transition-colors duration-300">
+ <h3 className="font-serif text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
  {title}
  </h3>
  <p className="text-muted-foreground text-[10px] mt-1 font-bold line-clamp-1 ">{description}</p>

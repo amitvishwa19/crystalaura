@@ -74,12 +74,12 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <div className="text-center p-12 glass-card rounded-3xl max-w-lg border border-white/5">
  <ShoppingBagIcon className="w-16 h-16 text-muted-foreground/25 mx-auto mb-6" />
  <h1 className="font-serif text-3xl font-bold mb-4 text-foreground">Sacred Curation Not Found</h1>
- <p className="text-[11px]s text-muted-foreground mb-8 max-w-xs mx-auto leading-relaxed">
+ <p className="text-xs text-muted-foreground mb-8 max-w-xs mx-auto leading-relaxed">
  The treasure you seek might have been cataloged under a different designation or returned to the earth.
  </p>
  <Link
  href="/shop"
- className="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl px-8 py-3.5 text-[11px]s font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5"
+ className="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl px-8 py-3.5 text-xs font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5"
  >
  <ArrowLeftIcon className="w-4 h-4" />
  <span>Back to Shop</span>
@@ -135,9 +135,9 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  
  {/* Breadcrumbs */}
  <nav className="flex items-center gap-2 text-[10px] font-bold text-muted-foreground mb-12">
- <Link href="/" className="hover:text-[11px]rimary transition-colors">Home</Link>
+ <Link href="/" className="hover:text-primary transition-colors">Home</Link>
  <span className="opacity-30">/</span>
- <Link href="/shop" className="hover:text-[11px]rimary transition-colors">Shop</Link>
+ <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
  <span className="opacity-30">/</span>
  <span className="text-foreground">{product.name}</span>
  </nav>
@@ -158,7 +158,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  alt={product.name}
  className="w-full h-full object-cover"
  />
- <span className="absolute top-6 left-6 bg-primary/10 border border-primary/20 text-[11px]rimary px-4 py-1.5 rounded-full text-[9px] font-black shadow-lg">
+ <span className="absolute top-6 left-6 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full text-[9px] font-black shadow-lg">
  {product.category}
  </span>
  </div>
@@ -177,7 +177,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
 
  {/* Ratings */}
  <div className="flex items-center gap-4 mb-8">
- <div className="flex items-center gap-1 text-[11px]rimary">
+ <div className="flex items-center gap-1 text-primary">
  {[1, 2, 3, 4, 5].map((star) => (
  <StarIcon key={star} className="w-3.5 h-3.5" />
  ))}
@@ -198,7 +198,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  </div>
 
  {/* Description */}
- <p className="text-[11px]s md:text-sm text-muted-foreground leading-relaxed mb-8 max-w-xl">
+ <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-8 max-w-xl">
  {product.description}
  </p>
 
@@ -213,7 +213,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  >
  <MinusIcon className="w-3.5 h-3.5 text-muted-foreground hover:text-foreground" />
  </button>
- <span className="w-10 text-center font-mono font-bold text-[11px]s">{quantity}</span>
+ <span className="w-10 text-center font-mono font-bold text-xs">{quantity}</span>
  <button
  onClick={() => setQuantity(Math.min(10, quantity + 1))}
  className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition-colors"
@@ -228,7 +228,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <div className="flex flex-wrap gap-4 mb-8">
  <button
  onClick={handleAddToCart}
- className="flex-grow bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl py-4 text-[11px]s font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5 flex items-center justify-center gap-2"
+ className="flex-grow bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl py-4 text-xs font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5 flex items-center justify-center gap-2"
  >
  <ShoppingBagIcon className="w-4 h-4" />
  <span>Add to Cart — ₹{(priceVal * quantity).toLocaleString()}</span>
@@ -238,7 +238,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  onClick={handleWishlist}
  className={`w-14 rounded-xl border flex items-center justify-center transition-all duration-300 active:scale-95 ${
  isWishlisted(product.id)
- ? "bg-primary/20 border-primary/30 text-[11px]rimary"
+ ? "bg-primary/20 border-primary/30 text-primary"
  : "bg-white/5 border-white/10 text-muted-foreground hover:text-foreground"
  }`}
  aria-label="Toggle Wishlist"
@@ -263,7 +263,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  { icon: SparklesIcon, label: "Energized" },
  ].map((f) => (
  <div key={f.label} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
- <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 text-[11px]rimary">
+ <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 text-primary">
  <f.icon className="w-5 h-5" />
  </div>
  <span className="text-[9px] text-muted-foreground font-bold leading-tight">{f.label}</span>
@@ -291,7 +291,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  key={t.id}
  onClick={() => setActiveTab(t.id)}
  className={`pb-4 px-6 text-[10px] font-bold transition-all border-b-2 -mb-[2px] ${
- activeTab === t.id ? "border-primary text-[11px]rimary" : "border-transparent text-muted-foreground hover:text-foreground"
+ activeTab === t.id ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
  }`}
  >
  {t.label}
@@ -306,7 +306,7 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  initial={{ opacity: 0, y: 10 }}
  animate={{ opacity: 1, y: 0 }}
  exit={{ opacity: 0, y: 10 }}
- className="text-[11px]s md:text-sm text-muted-foreground leading-relaxed flex flex-col gap-4"
+ className="text-xs md:text-sm text-muted-foreground leading-relaxed flex flex-col gap-4"
  >
  <p>
  Every crystal holds a distinct geometric lattice that resonates with a unique vibrational signature. This natural alignment helps absorb, redirect, or balance spatial frequencies surrounding your energy field.
@@ -329,12 +329,12 @@ export default function CrystalAuraProductDetailPage({ params: paramsPromise }) 
  <span className="font-serif text-sm font-bold text-foreground">{r.name}</span>
  <span className="text-[10px] text-muted-foreground">{r.date}</span>
  </div>
- <div className="flex items-center gap-1 text-[11px]rimary">
+ <div className="flex items-center gap-1 text-primary">
  {[...Array(r.rating)].map((_, starIdx) => (
  <StarIcon key={starIdx} className="w-3 h-3" />
  ))}
  </div>
- <p className="text-[11px]s text-muted-foreground leading-relaxed mt-1">{r.text}</p>
+ <p className="text-xs text-muted-foreground leading-relaxed mt-1">{r.text}</p>
  </div>
  ))}
  </motion.div>

@@ -8,8 +8,8 @@ const Footer = () => {
  <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
  <div>
  <Link href="/" className="flex items-center gap-2 mb-4">
- <span className="text-gold text-[11px]l">✧</span>
- <span className="font-serif text-[11px]l font-bold">
+ <span className="text-gold text-xl">✧</span>
+ <span className="font-serif text-xl font-bold">
  Crystal <span className="text-gold">Aura</span>
  </span>
  </Link>
@@ -57,7 +57,7 @@ const Footer = () => {
  placeholder="Your email"
  className="flex-1 bg-secondary border border-border rounded-lg px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
  />
- <button className="gold-gradient text-[11px]rimary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+ <button className="gold-gradient text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
  <Mail className="w-4 h-4" />
  </button>
  </div>

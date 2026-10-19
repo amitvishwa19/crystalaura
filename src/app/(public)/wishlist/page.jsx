@@ -39,13 +39,13 @@ export default function WishlistPage() {
  {/* Wishlist Header */}
  <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
  <div>
- <span className="text-[10px] font-sans text-[11px]rimary font-bold block mb-3">
+ <span className="text-[10px] font-sans text-primary font-bold block mb-3">
  ✦ Saved For Later ✦
  </span>
  <h1 className="text-4xl md:text-5xl font-serif font-bold ">
  My <span className="shimmer-text italic font-normal">Wishlist</span>
  </h1>
- <p className="text-muted-foreground mt-2 text-[11px]s">
+ <p className="text-muted-foreground mt-2 text-xs">
  {items.length} {items.length === 1 ? "mineral curation" : "mineral curations"} saved
  </p>
  </div>
@@ -53,16 +53,16 @@ export default function WishlistPage() {
 
  {items.length === 0 ? (
  <div className="glass-card rounded-3xl py-20 flex flex-col items-center text-center border border-white/5 relative overflow-hidden">
- <div className="w-16 h-16 rounded-2xl bg-primary/10 text-[11px]rimary border border-primary/20 flex items-center justify-center mb-6">
+ <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center mb-6">
  <HeartIcon className="w-6 h-6" />
  </div>
  <h2 className="font-serif text-2xl font-bold mb-2">Your Wishlist is Empty</h2>
- <p className="text-muted-foreground text-[11px]s mb-8 max-w-sm leading-relaxed">
+ <p className="text-muted-foreground text-xs mb-8 max-w-sm leading-relaxed">
  Tap the heart icon on any crystal curation across our shop to save it here for later.
  </p>
  <Link
  href="/shop"
- className="bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl px-8 py-3.5 text-[11px]s font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5"
+ className="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl px-8 py-3.5 text-xs font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5"
  >
  Browse Shop
  </Link>
@@ -111,12 +111,12 @@ export default function WishlistPage() {
 
  <div className="p-4 flex-grow flex flex-col justify-between">
  <div>
- <span className="text-[9px] text-[11px]rimary font-bold ">{p.category}</span>
- <h3 className="font-serif font-bold text-base mt-1 text-foreground leading-snug truncate group-hover:text-[11px]rimary transition-colors duration-300">
+ <span className="text-[9px] text-primary font-bold ">{p.category}</span>
+ <h3 className="font-serif font-bold text-base mt-1 text-foreground leading-snug truncate group-hover:text-primary transition-colors duration-300">
  {p.name}
  </h3>
  <div className="flex items-center gap-1.5 mt-1.5">
- <StarIcon className="w-3.5 h-3.5 text-[11px]rimary" />
+ <StarIcon className="w-3.5 h-3.5 text-primary" />
  <span className="text-[10px] font-mono text-muted-foreground">{p.rating} · {p.reviews} reviews</span>
  </div>
  </div>
@@ -133,7 +133,7 @@ export default function WishlistPage() {
 
  <button
  onClick={() => addToCart({ ...p, priceNum: priceVal })}
- className="p-2.5 rounded-xl bg-primary/10 text-[11px]rimary border border-primary/20 hover:bg-primary/25 hover:border-primary/45 transition-all duration-300 active:scale-95 flex items-center gap-1.5 text-[9px] font-bold "
+ className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary/25 hover:border-primary/45 transition-all duration-300 active:scale-95 flex items-center gap-1.5 text-[9px] font-bold "
  >
  <ShoppingBagIcon className="w-3.5 h-3.5" />
  <span>Add</span>
@@ -183,21 +183,21 @@ export default function WishlistPage() {
  <XIcon className="w-5 h-5" />
  </button>
  <div>
- <span className="text-[9px] text-[11px]rimary font-bold ">{quickView.category}</span>
- <h3 className="font-serif text-[11px]l font-bold mt-1 mb-2 text-foreground leading-snug">{quickView.name}</h3>
+ <span className="text-[9px] text-primary font-bold ">{quickView.category}</span>
+ <h3 className="font-serif text-xl font-bold mt-1 mb-2 text-foreground leading-snug">{quickView.name}</h3>
  
  <div className="flex items-baseline gap-2 mb-4">
- <span className="text-[11px]l font-serif font-bold text-foreground">
+ <span className="text-xl font-serif font-bold text-foreground">
  ₹{(quickView.priceNum || quickView.price).toLocaleString()}
  </span>
  {(quickView.originalPriceNum || quickView.originalPrice) && (
- <span className="text-[11px]s line-through text-muted-foreground/60">
+ <span className="text-xs line-through text-muted-foreground/60">
  ₹{(quickView.originalPriceNum || quickView.originalPrice).toLocaleString()}
  </span>
  )}
  </div>
  
- <p className="text-[11px]s text-muted-foreground leading-relaxed mb-6">
+ <p className="text-xs text-muted-foreground leading-relaxed mb-6">
  {quickView.description}
  </p>
  </div>
@@ -207,7 +207,7 @@ export default function WishlistPage() {
  addToCart({ ...quickView, priceNum: quickView.priceNum || quickView.price });
  setQuickView(null);
  }}
- className="w-full bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl py-3 text-[11px]s font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5 flex items-center justify-center gap-2"
+ className="w-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl py-3 text-xs font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5 flex items-center justify-center gap-2"
  >
  <ShoppingBagIcon className="w-4 h-4" />
  <span>Add to Cart</span>

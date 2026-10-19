@@ -35,13 +35,13 @@ const SiteInstagramFeed = () => {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
- className="text-5xl md:text-[11px]xl font-medium max-w-xl leading-[0.85] font-serif text-foreground"
+ className="text-5xl md:text-6xl font-medium max-w-xl leading-[0.85] font-serif text-foreground"
  >
  Connect
  <br />
  With The
  <br />
- <span className="italic font-light text-[11px]rimary text-gold-gradient">Source.</span>
+ <span className="italic font-light text-primary text-gold-gradient">Source.</span>
  </motion.h2>
 
  <motion.div 

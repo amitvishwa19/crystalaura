@@ -20,7 +20,7 @@ const CompareBar = () => {
  >
  <div className="glass-card rounded-2xl p-3 md:p-4 border-gold/30 shadow-xl bg-card/95 backdrop-blur-md">
  <div className="flex items-center gap-3 flex-wrap">
- <div className="flex items-center gap-2 text-[11px]s text-gold ">
+ <div className="flex items-center gap-2 text-xs text-gold ">
  <Scale className="w-4 h-4" /> Compare
  <span className="text-muted-foreground normal-case ">({items.length}/{max})</span>
  </div>
@@ -38,10 +38,10 @@ const CompareBar = () => {
  </div>
  ))}
  </div>
- <button onClick={clear} className="text-[11px]s text-muted-foreground hover:text-foreground">Clear</button>
+ <button onClick={clear} className="text-xs text-muted-foreground hover:text-foreground">Clear</button>
  <Link
  href="/compare"
- className="gold-gradient text-[11px]rimary-foreground px-4 py-2 rounded-lg text-sm font-medium inline-flex items-center gap-1.5 hover:opacity-90 transition-opacity"
+ className="gold-gradient text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium inline-flex items-center gap-1.5 hover:opacity-90 transition-opacity"
  >
  Compare <ArrowRight className="w-4 h-4" />
  </Link>

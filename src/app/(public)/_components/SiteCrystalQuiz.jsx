@@ -167,15 +167,15 @@ const SiteCrystalQuiz = () => {
  const currentQuestion = questions[currentStep];
 
  return (
- <section id="quiz" className="py-28 px-6 relative bg-gradient-to-b from-[#0d091a] to-background scroll-mt-20">
+ <section id="quiz" className="py-28 px-6 relative bg-gradient-to-b from-[#0f0f14] to-background scroll-mt-20">
  <div className="max-w-5xl mx-auto">
  
  {/* Header */}
  <div className="text-center mb-16">
  <div className="w-12 h-12 rounded-full bg-primary/5 border border-primary/20 flex items-center justify-center mx-auto mb-4">
- <SparklesIcon className="w-5 h-5 text-[11px]rimary animate-pulse" />
+ <SparklesIcon className="w-5 h-5 text-primary animate-pulse" />
  </div>
- <p className="text-[11px]rimary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-[10px] font-sans font-black mb-3">
  ✦ Crystal Match ✦
  </p>
  <h2 className="font-serif text-4xl md:text-5xl text-foreground">
@@ -216,13 +216,13 @@ const SiteCrystalQuiz = () => {
  animate={{ opacity: 1, y: 0 }}
  exit={{ opacity: 0, y: -15 }}
  transition={{ duration: 0.3 }}
- className="glass-card rounded-3xl p-6 md:p-12 border-white/5 relative bg-[#0e0c15]/10 backdrop-blur-md hover:border-primary/10 transition-colors duration-500"
+ className="glass-card rounded-3xl p-6 md:p-12 border-white/5 relative bg-[#0e0e12]/10 backdrop-blur-md hover:border-primary/10 transition-colors duration-500"
  style={{ boxShadow: '0 15px 35px -10px rgba(0,0,0,0.3)' }}
  >
  <h3 className="font-serif text-2xl md:text-3xl text-center text-foreground mb-2">
  {currentQuestion.title}
  </h3>
- <p className="text-[11px]s text-muted-foreground/60 text-center font-light mb-10">
+ <p className="text-xs text-muted-foreground/60 text-center font-light mb-10">
  {currentQuestion.subtitle}
  </p>
 
@@ -233,10 +233,10 @@ const SiteCrystalQuiz = () => {
  <button
  key={opt.value}
  onClick={() => handleSelect(currentQuestion.id, opt.value)}
- className="text-center p-5 rounded-2xl border transition-all border-white/5 bg-[#120f1e]/40 hover:border-primary/45 hover:bg-primary/5 hover:shadow-2xl hover:shadow-primary/5 active:scale-95 flex flex-col items-center gap-2 group"
+ className="text-center p-5 rounded-2xl border transition-all border-white/5 bg-[#131318]/40 hover:border-primary/45 hover:bg-primary/5 hover:shadow-2xl hover:shadow-primary/5 active:scale-95 flex flex-col items-center gap-2 group"
  >
  <span className="text-2xl group-hover:scale-110 transition-transform duration-300">{opt.symbol}</span>
- <span className="text-[11px]s text-muted-foreground group-hover:text-foreground font-sans font-bold ">{opt.label}</span>
+ <span className="text-xs text-muted-foreground group-hover:text-foreground font-sans font-bold ">{opt.label}</span>
  </button>
  ))}
  </div>
@@ -246,10 +246,10 @@ const SiteCrystalQuiz = () => {
  <button
  key={opt.value}
  onClick={() => handleSelect(currentQuestion.id, opt.value)}
- className="text-left py-4 px-6 rounded-2xl border transition-all border-white/5 bg-[#120f1e]/40 hover:border-primary/45 hover:bg-primary/5 text-muted-foreground hover:text-foreground text-[11px]s font-sans font-bold active:scale-98 flex justify-between items-center group"
+ className="text-left py-4 px-6 rounded-2xl border transition-all border-white/5 bg-[#131318]/40 hover:border-primary/45 hover:bg-primary/5 text-muted-foreground hover:text-foreground text-xs font-sans font-bold active:scale-98 flex justify-between items-center group"
  >
  <span>{opt.label}</span>
- <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[11px]rimary">✦</span>
+ <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">✦</span>
  </button>
  ))}
  </div>
@@ -279,21 +279,21 @@ const SiteCrystalQuiz = () => {
  <motion.div
  initial={{ opacity: 0, scale: 0.96 }}
  animate={{ opacity: 1, scale: 1 }}
- className="glass-card rounded-3xl p-8 md:p-14 border-white/10 bg-[#0e0b17]/50 backdrop-blur-md shadow-2xl text-center hover:border-primary/20 transition-all duration-750"
- style={{ boxShadow: '0 25px 60px -20px rgba(220,160,40,0.15)' }}
+ className="glass-card rounded-3xl p-8 md:p-14 border-white/10 bg-[#0b0b0e]/50 backdrop-blur-md shadow-2xl text-center hover:border-primary/20 transition-all duration-750"
+ style={{ boxShadow: '0 25px 60px -20px rgba(139,92,246,0.15)' }}
  >
  <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-6">
- <CheckCircle2Icon className="w-8 h-8 text-[11px]rimary animate-bounce" />
+ <CheckCircle2Icon className="w-8 h-8 text-primary animate-bounce" />
  </div>
- <p className="text-[11px]rimary text-[10px] font-sans font-black mb-3">
+ <p className="text-primary text-[10px] font-sans font-black mb-3">
  Alignment Complete
  </p>
  <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
  Your Aligned Treasures
  </h3>
  
- <div className="my-10 p-8 rounded-2xl bg-[#120f1e]/40 border border-white/5 max-w-xl mx-auto text-left hover:border-primary/10 transition-colors">
- <h4 className="font-serif text-2xl text-[11px]rimary font-semibold mb-3">
+ <div className="my-10 p-8 rounded-2xl bg-[#131318]/40 border border-white/5 max-w-xl mx-auto text-left hover:border-primary/10 transition-colors">
+ <h4 className="font-serif text-2xl text-primary font-semibold mb-3">
  {getRecommendations().title}
  </h4>
  <p className="text-muted-foreground/80 text-sm font-light leading-relaxed mb-6">
@@ -303,7 +303,7 @@ const SiteCrystalQuiz = () => {
  {getRecommendations().crystals.map(c => (
  <span 
  key={c}
- className="px-4 py-2 rounded-full border border-primary/25 bg-primary/5 text-[9px] font-sans font-black text-[11px]rimary "
+ className="px-4 py-2 rounded-full border border-primary/25 bg-primary/5 text-[9px] font-sans font-black text-primary "
  >
  ✦ {c}
  </span>

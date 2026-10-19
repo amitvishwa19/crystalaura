@@ -35,7 +35,7 @@ export default function BlogPostPage({ params: paramsPromise }) {
  <h1 className="font-serif text-2xl font-bold mb-4">Post Not Found</h1>
  <Link
  href="/blog"
- className="inline-block bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl px-6 py-2.5 text-[11px]s font-bold transition-all duration-300"
+ className="inline-block bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl px-6 py-2.5 text-xs font-bold transition-all duration-300"
  >
  Back to Journal
  </Link>
@@ -51,29 +51,29 @@ export default function BlogPostPage({ params: paramsPromise }) {
  {/* Back Link */}
  <Link
  href="/blog"
- className="inline-flex items-center gap-2 text-[10px] font-bold text-muted-foreground hover:text-[11px]rimary transition-colors duration-300 mb-8"
+ className="inline-flex items-center gap-2 text-[10px] font-bold text-muted-foreground hover:text-primary transition-colors duration-300 mb-8"
  >
  <ArrowLeftIcon className="w-3.5 h-3.5" /> Back to Journal
  </Link>
 
  {/* Hero Meta Info */}
  <div className="mb-10">
- <span className="text-[9px] text-[11px]rimary font-bold block mb-3">
+ <span className="text-[9px] text-primary font-bold block mb-3">
  {post.category}
  </span>
  <h1 className="text-3xl md:text-5xl font-serif font-bold text-foreground leading-tight mb-6">
  {post.title}
  </h1>
 
- <div className="flex flex-wrap items-center gap-6 text-[11px]s text-muted-foreground font-mono pb-6 border-b border-white/5">
+ <div className="flex flex-wrap items-center gap-6 text-xs text-muted-foreground font-mono pb-6 border-b border-white/5">
  <span className="flex items-center gap-2">
- <UserIcon className="w-4 h-4 text-[11px]rimary" /> {post.author}
+ <UserIcon className="w-4 h-4 text-primary" /> {post.author}
  </span>
  <span className="flex items-center gap-2">
- <CalendarIcon className="w-4 h-4 text-[11px]rimary" /> {post.date}
+ <CalendarIcon className="w-4 h-4 text-primary" /> {post.date}
  </span>
  <span className="flex items-center gap-2">
- <ClockIcon className="w-4 h-4 text-[11px]rimary" /> {post.readTime}
+ <ClockIcon className="w-4 h-4 text-primary" /> {post.readTime}
  </span>
  </div>
  </div>
@@ -96,14 +96,14 @@ export default function BlogPostPage({ params: paramsPromise }) {
  return (
  <h2
  key={index}
- className="font-serif text-[11px]l md:text-2xl font-bold text-foreground mt-6 mb-2 "
+ className="font-serif text-xl md:text-2xl font-bold text-foreground mt-6 mb-2 "
  >
  {titleText}
  </h2>
  );
  }
  return (
- <p key={index} className="text-muted-foreground text-[11px]s md:text-sm">
+ <p key={index} className="text-muted-foreground text-xs md:text-sm">
  {paragraph}
  </p>
  );

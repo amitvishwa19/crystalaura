@@ -71,7 +71,7 @@ const AppLoader = () => {
  <motion.div
  animate={{
  rotateY: [0, 180, 360],
- filter: ["drop-shadow(0 0 10px rgba(255,215,0,0.5))", "drop-shadow(0 0 20px rgba(138,43,226,0.5))", "drop-shadow(0 0 10px rgba(255,215,0,0.5))"],
+ filter: ["drop-shadow(0 0 10px rgba(139,92,246,0.5))", "drop-shadow(0 0 20px rgba(138,43,226,0.5))", "drop-shadow(0 0 10px rgba(139,92,246,0.5))"],
  }}
  transition={{
  duration: 4,
@@ -82,7 +82,7 @@ const AppLoader = () => {
  >
  <svg 
  viewBox="0 0 24 24" 
- className="w-12 h-12 text-[11px]rimary"
+ className="w-12 h-12 text-primary"
  fill="none" 
  stroke="currentColor" 
  strokeWidth="1" 

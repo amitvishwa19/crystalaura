@@ -44,7 +44,7 @@ export default function VastuPage() {
  
  {/* Vastu Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-[11px]rimary font-bold block mb-3">
+ <span className="text-[10px] font-sans text-primary font-bold block mb-3">
  ✦ Sacred Placement ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -68,15 +68,15 @@ export default function VastuPage() {
  className="glass-card rounded-2xl p-6 border border-white/5 hover:border-primary/20 flex flex-col justify-between"
  >
  <div>
- <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/10 text-[11px]rimary border border-primary/20 mb-5">
+ <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/10 text-primary border border-primary/20 mb-5">
  <tip.icon className="w-6 h-6" />
  </div>
  <h3 className="font-serif text-lg font-bold text-foreground mb-2">{tip.title}</h3>
- <p className="text-[11px]s text-muted-foreground leading-relaxed mb-6">{tip.description}</p>
+ <p className="text-xs text-muted-foreground leading-relaxed mb-6">{tip.description}</p>
  </div>
  <div className="pt-4 border-t border-white/5">
- <span className="text-[9px] text-[11px]rimary font-bold block mb-1">Recommended Crystals</span>
- <p className="text-[11px]s text-foreground font-medium font-serif">{tip.crystals}</p>
+ <span className="text-[9px] text-primary font-bold block mb-1">Recommended Crystals</span>
+ <p className="text-xs text-foreground font-medium font-serif">{tip.crystals}</p>
  </div>
  </motion.div>
  ))}
@@ -94,16 +94,16 @@ export default function VastuPage() {
 
  <div className="relative z-10 max-w-xl mx-auto">
  <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
- Need Personalized <span className="text-[11px]rimary italic">Vastu Consultation?</span>
+ Need Personalized <span className="text-primary italic">Vastu Consultation?</span>
  </h2>
- <p className="text-muted-foreground text-[11px]s leading-relaxed mb-8">
+ <p className="text-muted-foreground text-xs leading-relaxed mb-8">
  Our Vastu Shastra experts analyze spatial flow and direction profiles to recommend customized crystal mapping tailored to your specific energetic objectives.
  </p>
  <a
  href="https://wa.me/919876543210?text=Hi!%20I%20need%20a%20Vastu%20consultation%20for%20crystal%20placement."
  target="_blank"
  rel="noopener noreferrer"
- className="inline-block bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl px-8 py-3.5 text-[11px]s font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5"
+ className="inline-block bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl px-8 py-3.5 text-xs font-bold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/5"
  >
  Book Free Consultation
  </a>

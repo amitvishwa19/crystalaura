@@ -79,7 +79,7 @@ const ProductReviews = ({ productId }) => {
  <section className="mt-16 glass-card rounded-2xl p-6 md:p-8">
  <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
  <div>
- <p className="text-gold text-[11px]s mb-1">✦ COMMUNITY VOICES</p>
+ <p className="text-gold text-xs mb-1">✦ COMMUNITY VOICES</p>
  <h2 className="font-serif text-2xl">
  Customer <span className="text-gold italic">Reviews</span>
  </h2>
@@ -101,13 +101,13 @@ const ProductReviews = ({ productId }) => {
  <div className="md:col-span-1 text-center md:text-left">
  <div className="font-serif text-5xl text-gold">{stats.avg.toFixed(1)}</div>
  <StarRow value={Math.round(stats.avg)} />
- <p className="text-[11px]s text-muted-foreground mt-2">Based on {stats.total} verified reviews</p>
+ <p className="text-xs text-muted-foreground mt-2">Based on {stats.total} verified reviews</p>
  </div>
  <div className="md:col-span-2 space-y-1.5">
  {stats.breakdown.map(({ star, count }) => {
  const pct = stats.total ? (count / stats.total) * 100 : 0;
  return (
- <div key={star} className="flex items-center gap-3 text-[11px]s">
+ <div key={star} className="flex items-center gap-3 text-xs">
  <span className="w-8 text-muted-foreground">{star}★</span>
  <div className="flex-1 h-2 rounded-full bg-secondary overflow-hidden">
  <div className="h-full bg-gold rounded-full transition-all" style={{ width: `${pct}%` }} />
@@ -179,7 +179,7 @@ const ProductReviews = ({ productId }) => {
  ))}
  <p className="text-[11px] text-muted-foreground">Up to 3 photos</p>
  </div>
- <button type="submit" className="gold-gradient text-[11px]rimary-foreground px-5 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity">
+ <button type="submit" className="gold-gradient text-primary-foreground px-5 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity">
  Submit Review
  </button>
  </motion.form>

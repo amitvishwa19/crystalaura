@@ -68,7 +68,7 @@ export default function ContactPage() {
  
  {/* Contact Header */}
  <div className="text-center mb-16">
- <span className="text-[10px] font-sans text-[11px]rimary font-bold block mb-3">
+ <span className="text-[10px] font-sans text-primary font-bold block mb-3">
  ✦ Get In Touch ✦
  </span>
  <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
@@ -99,11 +99,11 @@ export default function ContactPage() {
  {...(item.href ? { href: item.href, target: item.href.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" } : {})}
  className="glass-card rounded-2xl p-5 flex items-center gap-4 border border-white/5 hover:border-primary/20 transition-all duration-300 block"
  >
- <div className="w-11 h-11 rounded-xl bg-primary/10 text-[11px]rimary border border-primary/20 flex items-center justify-center shrink-0">
+ <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center shrink-0">
  <item.icon className="w-5 h-5" />
  </div>
  <div className="min-w-0">
- <p className="text-[9px] text-[11px]rimary font-bold mb-1">{item.label}</p>
+ <p className="text-[9px] text-primary font-bold mb-1">{item.label}</p>
  <p className="font-serif text-sm font-bold text-foreground truncate">{item.value}</p>
  </div>
  </Wrapper>
@@ -131,12 +131,12 @@ export default function ContactPage() {
  >
  <span className="text-3xl block mb-4">🔮</span>
  <h3 className="font-serif text-lg font-bold mb-2">Message Sent</h3>
- <p className="text-[11px]s text-muted-foreground max-w-sm mx-auto leading-relaxed">
+ <p className="text-xs text-muted-foreground max-w-sm mx-auto leading-relaxed">
  Thank you. Your inquiry has been routed to our caregivers. We will align with you within 24 business hours.
  </p>
  <button
  onClick={() => setSubmitted(false)}
- className="mt-6 px-6 py-2 rounded-xl border border-primary/20 bg-primary/10 text-[11px]rimary text-[11px]s font-bold hover:bg-primary/20 transition-all active:scale-95"
+ className="mt-6 px-6 py-2 rounded-xl border border-primary/20 bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-all active:scale-95"
  >
  Send Another
  </button>
@@ -151,7 +151,7 @@ export default function ContactPage() {
  placeholder="Your name"
  value={form.name}
  onChange={(e) => setForm({ ...form, name: e.target.value })}
- className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-[11px]s text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all ${
+ className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-xs text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all ${
  errors.name ? "border-red-500/50" : "border-white/10 focus:border-primary/50"
  }`}
  />
@@ -165,7 +165,7 @@ export default function ContactPage() {
  placeholder="Your email"
  value={form.email}
  onChange={(e) => setForm({ ...form, email: e.target.value })}
- className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-[11px]s text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all ${
+ className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-xs text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all ${
  errors.email ? "border-red-500/50" : "border-white/10 focus:border-primary/50"
  }`}
  />
@@ -181,7 +181,7 @@ export default function ContactPage() {
  placeholder="Subject line"
  value={form.subject}
  onChange={(e) => setForm({ ...form, subject: e.target.value })}
- className="w-full bg-white/5 border border-white/10 focus:border-primary/50 rounded-xl px-4 py-3 text-[11px]s text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all"
+ className="w-full bg-white/5 border border-white/10 focus:border-primary/50 rounded-xl px-4 py-3 text-xs text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all"
  />
  </div>
 
@@ -190,10 +190,10 @@ export default function ContactPage() {
  <select
  value={form.topic}
  onChange={(e) => setForm({ ...form, topic: e.target.value })}
- className="w-full bg-white/5 border border-white/10 focus:border-primary/50 rounded-xl px-4 py-3 text-[11px]s text-muted-foreground focus:outline-none transition-all cursor-pointer"
+ className="w-full bg-white/5 border border-white/10 focus:border-primary/50 rounded-xl px-4 py-3 text-xs text-muted-foreground focus:outline-none transition-all cursor-pointer"
  >
  {TOPICS.map((t) => (
- <option key={t} value={t} className="bg-[#0e0b17]">{t}</option>
+ <option key={t} value={t} className="bg-[#0b0b0e]">{t}</option>
  ))}
  </select>
  </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
  placeholder="Write your message..."
  value={form.message}
  onChange={(e) => setForm({ ...form, message: e.target.value })}
- className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-[11px]s text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all ${
+ className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-xs text-foreground placeholder-muted-foreground/40 focus:outline-none transition-all ${
  errors.message ? "border-red-500/50" : "border-white/10 focus:border-primary/50"
  }`}
  />
@@ -216,7 +216,7 @@ export default function ContactPage() {
  <button
  type="submit"
  disabled={submitting}
- className="w-full bg-primary/10 hover:bg-primary/20 text-[11px]rimary border border-primary/20 rounded-xl py-4 text-[11px]s font-bold transition-all duration-300 disabled:opacity-50 active:scale-95 shadow-lg shadow-primary/5 mt-2"
+ className="w-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-xl py-4 text-xs font-bold transition-all duration-300 disabled:opacity-50 active:scale-95 shadow-lg shadow-primary/5 mt-2"
  >
  {submitting ? "Aligning..." : "Send Message"}
  </button>

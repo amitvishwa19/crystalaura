@@ -13,7 +13,7 @@ const SiteHeroSection = () => {
  return (
  <section className="relative min-h-[100vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 overflow-hidden pt-28 pb-16 transition-all duration-700">
  {/* Background fine grid and gradient overlay */}
- <div className="absolute inset-0 pointer-events-none -z-10 bg-gradient-to-b from-[#0c0a15] via-background to-background" />
+ <div className="absolute inset-0 pointer-events-none -z-10 bg-gradient-to-b from-[#0c0c10] via-background to-background" />
 
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10 max-w-7xl mx-auto w-full">
  {/* Left Column: Visual copy & call to action */}
@@ -22,7 +22,7 @@ const SiteHeroSection = () => {
  initial={{ opacity: 0, y: 15 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
- className="mb-6 inline-flex items-center gap-2 text-[10px] font-sans text-[11px]rimary font-black bg-primary/5 px-4.5 py-2.5 rounded-full border border-primary/25 shadow-lg shadow-primary/5"
+ className="mb-6 inline-flex items-center gap-2 text-[10px] font-sans text-primary font-black bg-primary/5 px-4.5 py-2.5 rounded-full border border-primary/25 shadow-lg shadow-primary/5"
  >
  <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
  BASED IN INDIA — SHIPPING WORLDWIDE
@@ -56,12 +56,12 @@ const SiteHeroSection = () => {
  >
  <Link
  href="/shop"
- className="inline-flex items-center justify-center whitespace-nowrap font-sans font-black text-[11px]s focus-visible:outline-none bg-primary rounded-full h-15 px-10 bg-gold-gradient text-white border border-primary/20 hover:opacity-90 hover:shadow-2xl hover:shadow-primary/30 transition-all active:scale-95 group shrink-0"
+ className="inline-flex items-center justify-center whitespace-nowrap font-sans font-black text-xs focus-visible:outline-none bg-primary rounded-full h-15 px-10 bg-gold-gradient text-white border border-primary/20 hover:opacity-90 hover:shadow-2xl hover:shadow-primary/30 transition-all active:scale-95 group shrink-0"
  >
  Explore Collection
  <ArrowUpRightIcon className="w-5 h-5 ml-2.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
  </Link>
- <p className="text-muted-foreground/60 text-[11px]s max-w-[260px] font-sans font-bold border-l border-white/10 pl-4 py-1 leading-relaxed">
+ <p className="text-muted-foreground/60 text-xs max-w-[260px] font-sans font-bold border-l border-white/10 pl-4 py-1 leading-relaxed">
  ✦ 100% NATURAL STONES<br />✧ VEDIC ENERGIZED
  </p>
  </motion.div>
@@ -112,8 +112,8 @@ const SiteHeroSection = () => {
  <motion.div
  animate={{ rotate: 360 }}
  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
- className="w-32 h-32 rounded-full border border-primary/20 bg-background/90 backdrop-blur-md flex items-center justify-center text-[9px] font-black p-5 text-center leading-tight text-[11px]rimary shadow-2xl hover:border-primary/40 transition-colors"
- style={{ boxShadow: '0 10px 30px -10px rgba(220,160,40,0.2)' }}
+ className="w-32 h-32 rounded-full border border-primary/20 bg-background/90 backdrop-blur-md flex items-center justify-center text-[9px] font-black p-5 text-center leading-tight text-primary shadow-2xl hover:border-primary/40 transition-colors"
+ style={{ boxShadow: '0 10px 30px -10px rgba(139,92,246,0.2)' }}
  >
  100% Authentic • Ethically Sourced •
  </motion.div>

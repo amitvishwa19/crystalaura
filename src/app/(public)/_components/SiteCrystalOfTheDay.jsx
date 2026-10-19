@@ -48,7 +48,7 @@ const SiteCrystalOfTheDay = () => {
  const priceVal = product.priceNum || product.price;
 
  return (
- <section className="py-24 px-6 relative bg-gradient-to-b from-background to-[#0d091a]">
+ <section className="py-24 px-6 relative bg-gradient-to-b from-background to-[#0f0f14]">
  {/* Back glow spot */}
  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
@@ -59,7 +59,7 @@ const SiteCrystalOfTheDay = () => {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  className="glass-card rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2 shadow-2xl border-white/5 hover:border-primary/20 transition-colors duration-700"
- style={{ boxShadow: '0 20px 50px -15px rgba(220,160,40,0.1)' }}
+ style={{ boxShadow: '0 20px 50px -15px rgba(139,92,246,0.1)' }}
  >
  {/* Left Column: Image with Badge */}
  <div className="relative h-96 md:h-auto min-h-[400px] overflow-hidden group">
@@ -70,16 +70,16 @@ const SiteCrystalOfTheDay = () => {
  />
  {/* Glassmorphic crystal of the day floating badge */}
  <div className="absolute top-8 left-8 inline-flex items-center gap-2.5 bg-background/80 backdrop-blur-md border border-primary/20 px-5 py-2.5 rounded-full shadow-lg shadow-black/20">
- <SparklesIcon className="w-4 h-4 text-[11px]rimary animate-pulse" />
- <span className="text-[9px] text-[11px]rimary font-sans font-black ">
+ <SparklesIcon className="w-4 h-4 text-primary animate-pulse" />
+ <span className="text-[9px] text-primary font-sans font-black ">
  Crystal of the Day
  </span>
  </div>
  </div>
 
  {/* Right Column: Content */}
- <div className="p-8 md:p-16 flex flex-col justify-center bg-[#0d0917]/20 backdrop-blur-md border-l border-white/5 md:border-l">
- <p className="text-[11px]rimary text-[10px] font-sans font-black mb-4">
+ <div className="p-8 md:p-16 flex flex-col justify-center bg-[#0e0e12]/20 backdrop-blur-md border-l border-white/5 md:border-l">
+ <p className="text-primary text-[10px] font-sans font-black mb-4">
  {dateStr || "✦ Today's Pick"}
  </p>
  <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4 leading-tight">
@@ -94,7 +94,7 @@ const SiteCrystalOfTheDay = () => {
  
  <div className="flex items-center gap-4 mb-8">
  <div>
- <p className="text-[11px]s text-muted-foreground/60 font-sans font-bold">Special Price</p>
+ <p className="text-xs text-muted-foreground/60 font-sans font-bold">Special Price</p>
  <div className="flex items-baseline gap-2.5 mt-1">
  <span className="text-3xl font-serif font-bold text-foreground">₹{priceVal}</span>
  {product.originalPrice && (
@@ -103,7 +103,7 @@ const SiteCrystalOfTheDay = () => {
  </div>
  </div>
  {product.originalPrice && (
- <div className="bg-primary/5 border border-primary/20 rounded-full px-3.5 py-1 text-[9px] font-sans font-black text-[11px]rimary animate-pulse">
+ <div className="bg-primary/5 border border-primary/20 rounded-full px-3.5 py-1 text-[9px] font-sans font-black text-primary animate-pulse">
  Save {Math.round((1 - priceVal / product.originalPrice) * 100)}%
  </div>
  )}
@@ -113,7 +113,7 @@ const SiteCrystalOfTheDay = () => {
  <motion.button 
  whileHover={{ scale: 1.02 }}
  whileTap={{ scale: 0.98 }}
- className="bg-gold-gradient text-white font-sans font-black text-[11px]s px-10 py-5 rounded-full flex items-center gap-2 hover:opacity-95 hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 border border-primary/15"
+ className="bg-gold-gradient text-white font-sans font-black text-xs px-10 py-5 rounded-full flex items-center gap-2 hover:opacity-95 hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 border border-primary/15"
  >
  Discover Crystal
  <ArrowRightIcon className="w-4 h-4" />

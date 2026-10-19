@@ -73,11 +73,11 @@ const CartDrawer = () => {
  animate={{ x: 0 }}
  exit={{ x: "100%" }}
  transition={{ type: "spring", damping: 25, stiffness: 250 }}
- className="fixed top-0 right-0 h-full w-full max-w-md z-50 bg-[#0e0b17] border-l border-white/10 shadow-2xl flex flex-col"
+ className="fixed top-0 right-0 h-full w-full max-w-md z-50 bg-[#0b0b0e] border-l border-white/10 shadow-2xl flex flex-col"
  >
  <div className="flex items-center justify-between p-6 border-b border-white/5">
  <div>
- <h2 className="font-serif text-[11px]l text-foreground">Cart</h2>
+ <h2 className="font-serif text-xl text-foreground">Cart</h2>
  <p className="text-[10px] text-muted-foreground font-sans font-bold ">
  {totalItems} {totalItems === 1 ? "item" : "items"}
  </p>
@@ -101,7 +101,7 @@ const CartDrawer = () => {
  <Link
  href="/shop"
  onClick={() => setIsOpen(false)}
- className="inline-block text-[10px] font-sans font-black text-[11px]rimary hover:underline"
+ className="inline-block text-[10px] font-sans font-black text-primary hover:underline"
  >
  Browse Shop
  </Link>
@@ -128,23 +128,23 @@ const CartDrawer = () => {
  <TrashIcon className="w-3.5 h-3.5" />
  </button>
  </div>
- <p className="text-[11px]s text-[11px]rimary font-sans font-bold mt-0.5">
+ <p className="text-xs text-primary font-sans font-bold mt-0.5">
  ₹{item.product.priceNum || item.product.price}
  </p>
  </div>
  <div className="flex items-center gap-2 mt-2">
  <button
  onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
- className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-[11px]s"
+ className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-xs"
  >
  <MinusIcon className="w-3 h-3" />
  </button>
- <span className="text-[11px]s font-sans font-bold text-foreground w-6 text-center">
+ <span className="text-xs font-sans font-bold text-foreground w-6 text-center">
  {item.quantity}
  </span>
  <button
  onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
- className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-[11px]s"
+ className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all text-xs"
  >
  <PlusIcon className="w-3 h-3" />
  </button>
@@ -160,7 +160,7 @@ const CartDrawer = () => {
  <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
  <div className="flex items-center gap-2 text-sm">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-green-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
- <span className="text-[11px]s font-sans font-bold text-foreground">{appliedPromo.code}</span>
+ <span className="text-xs font-sans font-bold text-foreground">{appliedPromo.code}</span>
  <span className="text-[10px] text-muted-foreground">({appliedPromo.label})</span>
  </div>
  <button type="button" onClick={removePromo} className="text-[10px] text-muted-foreground hover:text-destructive font-sans font-bold">Remove</button>
@@ -174,12 +174,12 @@ const CartDrawer = () => {
  onChange={(e) => { setPromoInput(e.target.value); setPromoError(""); }}
  placeholder="Promo code"
  maxLength={20}
- className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-[11px]s text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/40 font-sans font-bold "
+ className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/40 font-sans font-bold "
  />
  <button
  type="button"
  onClick={applyPromo}
- className="px-5 py-2.5 rounded-xl text-[10px] font-sans font-black bg-primary/10 text-[11px]rimary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all"
+ className="px-5 py-2.5 rounded-xl text-[10px] font-sans font-black bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 active:scale-95 transition-all"
  >
  Apply
  </button>
@@ -188,7 +188,7 @@ const CartDrawer = () => {
  </div>
  )}
 
- <div className="space-y-1.5 text-[11px]s text-muted-foreground">
+ <div className="space-y-1.5 text-xs text-muted-foreground">
  <div className="flex justify-between">
  <span>Subtotal</span>
  <span className="text-foreground font-sans font-bold">₹{totalPrice}</span>
@@ -215,12 +215,12 @@ const CartDrawer = () => {
  <div className="border-t border-white/5 pt-3">
  <div className="flex justify-between items-center mb-4">
  <span className="text-sm font-serif text-foreground">Total</span>
- <span className="text-lg font-serif text-[11px]rimary font-bold">₹{grandTotal}</span>
+ <span className="text-lg font-serif text-primary font-bold">₹{grandTotal}</span>
  </div>
  <Link
  href="/checkout"
  onClick={() => setIsOpen(false)}
- className="block w-full text-center py-3.5 rounded-xl text-[10px] font-sans font-black bg-gradient-to-r from-amber-500/90 via-yellow-500/90 to-amber-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20"
+ className="block w-full text-center py-3.5 rounded-xl text-[10px] font-sans font-black bg-gradient-to-r from-violet-500/90 via-violet-400/90 to-violet-500/90 text-white hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border border-primary/20"
  >
  Checkout
  </Link>
